@@ -15,19 +15,19 @@ const pkg = require('./package.json'); // or whereever your package.json lies
 
 // version check options
 const options = {
-	repo: 'axelrindle/github-version-checker', // will be expanded to https://api.github.com/repos/axelrindle/github-version-checker/releases
-    currentVersion: pkg.version
+  repo: 'axelrindle/github-version-checker', // will be expanded to https://api.github.com/repos/axelrindle/github-version-checker/releases
+  currentVersion: pkg.version
 };
 versionCheck(options, function (update) { // callback function
-	if (update) { // print some update info if an update is available
-    	console.log('An update is available!');
-        console.log('New version: ' + update.tag_name);
-        console.log('Details here: ' + update.html_url);
-    }
-    
-    // start your app
-  	console.log('Starting app...');
-    //...
+  if (update) { // print some update info if an update is available
+    console.log('An update is available!');
+    console.log('New version: ' + update.tag_name);
+    console.log('Details here: ' + update.html_url);
+  }
+
+  // start your app
+  console.log('Starting app...');
+  //...
 });
 ```
 
@@ -38,16 +38,16 @@ versionCheck = require('github-version-checker')
 pkg = require('./package.json') # or whereever your package.json lies
 
 # version check options
-options = 
+options =
   repo: 'axelrindle/github-version-checker'
   currentVersion: pkg.version
-  
+
 versionCheck options, (update) -> # callback function
   if update # print some update info if an update is available
     console.log 'An update is available!'
     console.log 'New version: ' + update.tag_name
     console.log 'Details here: ' + update.html_url
-    
+
   # start your app
   console.log 'Starting app...'
   #...
