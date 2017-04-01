@@ -12,7 +12,7 @@ const currentVersion = require('./package.json').version;
 
 // version check options
 const options = {
-  repo: 'axelrindle/boilernode', // the GitHub repo (required)
+  repo: 'axelrindle/github-version-checker', // the GitHub repo (required)
   currentVersion: currentVersion // your app's current version (required)
 };
 versionCheck(options, function (update) {
@@ -28,5 +28,7 @@ versionCheck(options, function (update) {
     console.log('');
     console.log('------------------------------------------------------------');
     console.log('');
+  } else {
+    console.log('No updates found.');
   }
 });

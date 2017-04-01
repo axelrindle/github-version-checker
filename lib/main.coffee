@@ -36,7 +36,7 @@ module.exports = (options, callback) ->
     # if a remote version is higher than the installed one, the callback
     # will be called with the release object
     for release in releases
-      tag = release.tag_name.replace(/\D/g, '')
+      tag = release.tag_name.replace(/[^0-9$.,]/g, '')
       if semcmp(currentVersion, tag) is -1
         found = true
         callback release
