@@ -56,3 +56,8 @@ versionCheck options, (update) -> # callback function
 ## The `update` object
 The object you receive in the callback function, follows the format specified here:
 https://developer.github.com/v3/repos/releases/#get-a-single-release
+
+## Todo
+
+* Add a sync method returning just `true` or `false`
+* Add settings to define an own update service
