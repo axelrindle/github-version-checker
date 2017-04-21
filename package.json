@@ -4,7 +4,7 @@
   "description": "Version checker working with GitHub releases.",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha"
   },
   "keywords": [
     "node",
@@ -15,14 +15,17 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^1.1.3",
-    "coffee-script": "^1.12.4",
+    "coffee-script": "^1.12.5",
     "gulp": "github:gulpjs/gulp#4.0",
+    "promise": "^7.1.1",
     "request": "^2.81.0",
     "semver-compare": "^1.0.0",
     "sprintf-js": "^1.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-coffeelint": "^0.6.0"
+    "gulp-coffeelint": "^0.6.0",
+    "mocha": "^3.2.0",
+    "mocha-logger": "^1.0.5"
   }
 }
