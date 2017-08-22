@@ -61,3 +61,4 @@ https://developer.github.com/v3/repos/releases/#get-a-single-release
 
 * Add a sync method returning just `true` or `false`
 * Add settings to define an own update service
+* Only compare to the latest release on GitHub (see [#1](https://github.com/axelrindle/github-version-checker/issues/1))
