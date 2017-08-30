@@ -19,5 +19,7 @@ versionCheck(options, function (update, error) {
   if (update) {
     console.log("An update is available! " + update.tag_name);
     console.log("You are on version " + options.currentVersion + "!");
+  } else {
+    console.log("You are up to date.");
   }
 })
