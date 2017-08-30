@@ -2,7 +2,7 @@
 'use strict';
 
 // register coffee-script
-require('coffee-script/register');
+require('coffeescript/register');
 
 // require modules
 const versionCheck = require('../lib/main.coffee');
@@ -10,7 +10,7 @@ const assert = require('assert');
 
 const options = {
   repo: 'axelrindle/github-version-checker',
-  currentVersion: "1.0.0"
+  currentVersion: require('../package.json').version
 };
 
 describe('github-version-checker', function () {
