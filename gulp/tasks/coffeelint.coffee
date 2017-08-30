@@ -6,6 +6,7 @@ conf = require '../coffeelint.json'
 # path to source files
 path = 'lib/**/*.coffee'
 
+# define the task function
 task = () ->
   gulp.src path
     .pipe coffeelint conf
