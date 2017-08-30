@@ -27,7 +27,7 @@ check = (options, callback) ->
 
   # do the api call
   apiUrl = sprintf baseApiUrl, repo
-  if includePreReleases then apiUrl += '/latest'
+  if not includePreReleases then apiUrl += '/latest'
   got(apiUrl).then((response) ->
     # parse the response body into an object
     releases = JSON.parse response.body
@@ -45,11 +45,10 @@ check = (options, callback) ->
           callback release, null
           break
     else
-      latest = releases[0]
-      tag = latest.tag_name.replace(/[^0-9$.,]/g, '')
+      tag = releases.tag_name.replace(/[^0-9$.,]/g, '')
       if semcmp(currentVersion, tag) is -1
         found = true
-        callback latest, null
+        callback releases, null
 
     callback(null, null) if not found
   ).catch((error) ->
