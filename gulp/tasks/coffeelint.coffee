@@ -7,10 +7,9 @@ conf = require '../coffeelint.json'
 path = 'lib/**/*.coffee'
 
 task = () ->
-  gulp.src(path)
-    .pipe coffeelint(conf)
-    .pipe coffeelint.reporter('coffeelint-stylish')
+  gulp.src path
+    .pipe coffeelint conf
+    .pipe coffeelint.reporter 'coffeelint-stylish'
 
 # register the task
-gulp.task 'coffeelint', task
 module.exports = task

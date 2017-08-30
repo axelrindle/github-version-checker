@@ -1,4 +1,4 @@
-# which tasks to laod
+# which tasks to load
 tasks = [
   'coffeelint'
 ]
