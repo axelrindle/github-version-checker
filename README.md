@@ -48,6 +48,6 @@ https://developer.github.com/v3/repos/releases/#get-a-single-release
 
 ## Todo
 
-* Add a sync method returning just `true` or `false`
-* Add settings to define an own update service
+* ~~Add a sync method returning just `true` or `false`~~ Can be achieved with **async/await**
+* ~~Add settings to define an own update service~~ For now, I stay with GitHub releases only
 * ~~Only compare to the latest release on GitHub (see [#1](https://github.com/axelrindle/github-version-checker/issues/1))~~
