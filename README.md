@@ -38,7 +38,7 @@ versionCheck(options, function (update, error) { // callback function
 Check the [examples folder](https://github.com/axelrindle/github-version-checker/tree/master/examples) for more examples.
 
 ### Note on semantic versioning
-Always try to follow a clear [semver format](http://semver.org/). This helps to avoid parsing mistakes and getting a clear result.
+Always try to follow a clear [semver format](http://semver.org/). This helps to avoid parsing mistakes and getting a clear result. Also read [here](https://github.com/npm/node-semver#versions).
 
 ## API
 ### `function versionCheck(options, [callback])`
