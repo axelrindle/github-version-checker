@@ -1,10 +1,9 @@
 # require npm modules
 got = require 'got'
-semcmp = require 'semver-compare'
 chalk = require 'chalk'
-sprintf = require('sprintf-js').sprintf
+semver = require 'semver'
 
-baseApiUrl = 'https://api.github.com/repos/%s/releases'
+baseApiUrl = 'https://api.github.com/repos/REPO/releases'
 
 module.exports = (options, callback) ->
   if callback
@@ -26,7 +25,7 @@ check = (options, callback) ->
   callback(null, 'no current version given') if currentVersion is undefined
 
   # do the api call
-  apiUrl = sprintf baseApiUrl, repo
+  apiUrl = baseApiUrl.replace 'REPO', repo
   if not includePreReleases then apiUrl += '/latest'
   got(apiUrl).then((response) ->
     # parse the response body into an object
@@ -39,20 +38,18 @@ check = (options, callback) ->
       # if a remote version is higher than the installed one, the callback
       # will be called with the release object
       for release in releases
-        tag = release.tag_name.replace(/[^0-9$.,]/g, '')
-        if semcmp(currentVersion, tag) is -1
+        tag = release.tag_name
+        if semver.compare(currentVersion, tag) is -1
           found = true
           callback release, null
           break
     else
-      tag = releases.tag_name.replace(/[^0-9$.,]/g, '')
-      if semcmp(currentVersion, tag) is -1
+      tag = releases.tag_name
+      if semver.compare(currentVersion, tag) is -1
         found = true
         callback releases, null
 
     callback(null, null) if not found
-  ).catch((error) ->
-    callback null, error
-  )
+  ).catch (error) -> callback null, error
 
   return null
