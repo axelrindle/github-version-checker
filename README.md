@@ -7,7 +7,7 @@ $ npm install github-version-checker
 ```
 or
 ```bash
-$ yarn install github-version-checker
+$ yarn add github-version-checker
 ```
 
 ## Usage
