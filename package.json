@@ -1,28 +1,32 @@
 {
   "name": "github-version-checker",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Version checker working with GitHub releases.",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "keywords": [
-    "node",
     "version-checker",
     "github-api"
   ],
-  "author": "Axel Rindle",
+  "author": "Axel Rindle <axel.rindle@gmx.de>",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.1.3",
     "coffeescript": "^1.12.7",
     "github-graphql-client": "^1.0.0",
     "semver": "^5.4.1"
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-coffeelint": "^0.6.0",
-    "mocha": "^3.2.0",
-    "mocha-logger": "^1.0.5"
-  }
+    "gulp-coffeelint": "^0.6.0"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelrindle/github-version-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axelrindle/github-version-checker/issues"
+  },
+  "homepage": "https://github.com/axelrindle/github-version-checker#readme"
 }

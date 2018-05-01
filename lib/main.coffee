@@ -1,6 +1,5 @@
 # Require modules
 graphql = require 'github-graphql-client'
-chalk = require 'chalk'
 semver = require 'semver'
 query = require './query'
 
