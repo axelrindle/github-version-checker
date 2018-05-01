@@ -1,0 +1,8 @@
+# Migrating to Version `2.0.0`
+
+Please note the following changes, when you migrate from a version below `2.0.0`:
+
+- The `options` object changed and require using a [personal access token](https://blog.github.com/2013-05-16-personal-api-tokens/). See [here](https://github.com/axelrindle/github-version-checker#the-options-object).
+- The `callback` structure changed. I decided to apply a node convention called **Error-First** in which a callback function's first parameter is the `error`. See [here](https://github.com/axelrindle/github-version-checker#the-callback-function-optional).
+
+Before opening an issue, please confirm that you changed your code according to these changes.
