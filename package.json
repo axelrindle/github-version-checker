@@ -16,7 +16,7 @@
   "dependencies": {
     "chalk": "^1.1.3",
     "coffeescript": "^1.12.7",
-    "got": "^7.1.0",
+    "github-graphql-client": "^1.0.0",
     "semver": "^5.4.1"
   },
   "devDependencies": {
