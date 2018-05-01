@@ -17,7 +17,7 @@ module.exports = (options, callback) ->
     check options, callback
   else
     return new Promise (resolve, reject) ->
-      check options, (update, error) ->
+      check options, (error, update) ->
         reject error if error
         if update then resolve update else resolve null
 
