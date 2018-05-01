@@ -33,17 +33,25 @@ module.exports = (options, callback) ->
 ###
 check = (options, callback) ->
   # get options
-  token = options.token
-  repo = options.repo
-  owner = options.owner
-  currentVersion = options.currentVersion
+  token = options.token.trim()
+  repo = options.repo.trim()
+  owner = options.owner.trim()
+  currentVersion = options.currentVersion.trim()
   fetchTags = options.fetchTags || false
 
   # check if required options are defined
-  callback('no token specified', null) if token is undefined
-  callback('no repository specified', null) if repo is undefined
-  callback('no owner specified', null) if owner is undefined
-  callback('no current version given', null) if currentVersion is undefined
+  if token is undefined or token is ''
+    callback('no token specified', null)
+    return
+  if repo is undefined or repo is ''
+    callback('no repository specified', null)
+    return
+  if owner is undefined or owner is ''
+    callback('no owner specified', null)
+    return
+  if currentVersion is undefined or currentVersion is ''
+    callback('no current version given', null)
+    return
 
   # build the query
   query = if fetchTags then query.tags repo, owner else query.releases repo, owner
