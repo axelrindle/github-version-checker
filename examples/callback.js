@@ -1,25 +1,27 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 
 // register coffeescript
-require('coffeescript/register')
+require('coffeescript/register');
 
-const versionCheck = require('../lib/main')
+const versionCheck = require('../lib/main');
 const options = {
-  repo: 'axelrindle/github-version-checker',
+  token: require('./token'),
+  repo: 'github-version-checker',
+  owner: 'axelrindle',
   currentVersion: require('../package.json').version
-}
+};
 
 versionCheck(options, function (update, error) {
   if (error) {
     console.error(error);
-    process.exit(-1)
+    process.exit(-1);
   }
 
   if (update) {
-    console.log("An update is available! " + update.tag_name);
+    console.log("An update is available! " + update.name);
     console.log("You are on version " + options.currentVersion + "!");
   } else {
     console.log("You are up to date.");
   }
-})
+});
