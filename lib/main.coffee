@@ -40,10 +40,10 @@ check = (options, callback) ->
   fetchTags = options.fetchTags || false
 
   # check if required options are defined
-  callback(null, 'no token specified') if token is undefined
-  callback(null, 'no repository specified') if repo is undefined
-  callback(null, 'no owner specified') if owner is undefined
-  callback(null, 'no current version given') if currentVersion is undefined
+  callback('no token specified', null) if token is undefined
+  callback('no repository specified', null) if repo is undefined
+  callback('no owner specified', null) if owner is undefined
+  callback('no current version given', null) if currentVersion is undefined
 
   # build the query
   query = if fetchTags then query.tags repo, owner else query.releases repo, owner
@@ -51,7 +51,7 @@ check = (options, callback) ->
   # do the api call
   graphql (token: token, query: query), (err, res) ->
     if err
-      callback null, err
+      callback err, null
     else
       # Retrieve newer version name
       newer =
@@ -62,7 +62,7 @@ check = (options, callback) ->
 
       # Compare versions
       if semver.gt (if fetchTags then newer.name else newer.tag.name), currentVersion
-        callback newer, null
+        callback null, newer
       else
         callback null, null
 

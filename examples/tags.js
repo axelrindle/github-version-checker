@@ -13,7 +13,7 @@ const options = {
   fetchTags: true
 };
 
-versionCheck(options, function (update, error) {
+versionCheck(options, function (error, update) {
   if (error) {
     console.error(error);
     process.exit(-1);
