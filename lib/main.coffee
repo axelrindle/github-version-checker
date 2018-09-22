@@ -32,7 +32,7 @@ module.exports = (options, callback) ->
 ###
 check = (options, callback) ->
   # get options
-  token = options.token ? ''
+  token = options.token ? process.env.GITHUB_API_TOKEN ? ''
   repo = options.repo ? ''
   owner = options.owner ? ''
   currentVersion = options.currentVersion ? ''
