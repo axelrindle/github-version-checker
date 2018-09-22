@@ -15,8 +15,10 @@
     "semver": "^5.4.1"
   },
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-coffeelint": "^0.6.0"
+    "coffeelint": "^2.1.0"
+  },
+  "scripts": {
+    "lint": "coffeelint -f coffeelint.json lib/ || true"
   },
   "files": [
     "lib/*"
