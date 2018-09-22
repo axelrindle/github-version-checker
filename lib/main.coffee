@@ -32,23 +32,23 @@ module.exports = (options, callback) ->
 ###
 check = (options, callback) ->
   # get options
-  token = options.token.trim()
-  repo = options.repo.trim()
-  owner = options.owner.trim()
-  currentVersion = options.currentVersion.trim()
+  token = options.token ? ''
+  repo = options.repo ? ''
+  owner = options.owner ? ''
+  currentVersion = options.currentVersion ? ''
   fetchTags = options.fetchTags || false
 
   # check if required options are defined
-  if token is undefined or token is ''
+  if token is ''
     callback('no token specified', null)
     return
-  if repo is undefined or repo is ''
+  if repo is ''
     callback('no repository specified', null)
     return
-  if owner is undefined or owner is ''
+  if owner is ''
     callback('no owner specified', null)
     return
-  if currentVersion is undefined or currentVersion is ''
+  if currentVersion is ''
     callback('no current version given', null)
     return
 
