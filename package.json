@@ -12,7 +12,7 @@
   "dependencies": {
     "coffeescript": "^1.12.7",
     "github-graphql-client": "^1.0.0",
-    "semver": "^5.4.1"
+    "semver": "^5.5.1"
   },
   "devDependencies": {
     "coffeelint": "^2.1.0"
