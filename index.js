@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // register coffee-script
 require('coffeescript/register');
