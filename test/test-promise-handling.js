@@ -1,29 +1,26 @@
 #!/usr/bin/env node
 'use strict';
 
-// register coffee-script
-require('coffeescript/register');
-
 // require modules
-const versionCheck = require('../lib/main.coffee');
-const assert = require('assert');
+const versionCheck = require('../');
 
 const options = {
-  repo: 'axelrindle/github-version-checker',
+  token: process.env.GITHUB_API_TOKEN,
+  repo: 'github-version-checker',
+  owner: 'axelrindle',
   currentVersion: require('../package.json').version
 };
 
 describe('github-version-checker', function () {
   describe('#versionCheck with one parameter and correct options', function () {
-    it('should resolve the Promise without errors', function () {
-      versionCheck(options).then(
-        function (update) {
-          assert.notEqual(update, undefined);
-        },
-        function (error) {
-          throw error;
-        }
-      );
+    it('should resolve without errors', function (done) {
+      versionCheck(options)
+        .then(function (update) {
+          done();
+        })
+        .catch(function (err) {
+          done(new Error(err));
+        });
     });
   });
 });

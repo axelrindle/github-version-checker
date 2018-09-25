@@ -1,25 +1,26 @@
 #!/usr/bin/env node
-'use strict'
-
-// register coffeescript
-require('coffeescript/register')
+'use strict';
 
 // require modules
-const versionCheck = require('../lib/main')
-const assert = require('assert')
+const versionCheck = require('../');
+const assert = require('assert');
 
 const options = {
-  repo: 'axelrindle/github-version-checker',
+  repo: 'github-version-checker',
+  owner: 'axelrindle',
   currentVersion: require('../package.json').version
-}
+};
 
 describe('github-version-checker', function () {
   describe('#versionCheck with two parameters', function () {
-    it('should return null', function () {
-      assert.equal(versionCheck(options, function(update, error) {}), null)
+    it('should return null', function (done) {
+      assert.equal(versionCheck(options, function(update, err) {
+        if (err) done(new Error(err));
+        else done();
+      }), null)
     })
   })
-})
+});
 
 describe('github-version-checker', function () {
   describe('#versionCheck with only one options parameter', function () {
@@ -27,4 +28,4 @@ describe('github-version-checker', function () {
       assert.equal(typeof versionCheck(options).then, 'function')
     })
   })
-})
+});
