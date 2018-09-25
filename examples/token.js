@@ -1,1 +1,1 @@
-module.exports = 'PUT-YOUR-TOKEN-HERE';
+module.exports = process.env.GITHUB_API_TOKEN;
