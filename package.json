@@ -15,10 +15,12 @@
     "semver": "^5.5.1"
   },
   "devDependencies": {
-    "coffeelint": "^2.1.0"
+    "coffeelint": "^2.1.0",
+    "mocha": "^5.2.0"
   },
   "scripts": {
-    "lint": "coffeelint -f coffeelint.json lib/ || true"
+    "lint": "coffeelint -f coffeelint.json lib/ || true",
+    "test": "mocha"
   },
   "files": [
     "lib/*"
