@@ -4,7 +4,6 @@ github_graphql = require 'github-graphql-client'
 semver = require 'semver'
 query = require './query'
 
-
 ###
   Executes a GraphQL query on the API to fetch either the latest release or tag.
   The returned version is compared to the given version.
@@ -16,14 +15,14 @@ query = require './query'
 ###
 graphql = (options, callback) ->
   # build the query
-  query =
+  theQuery =
     if options.fetchTags
       query.tags options.repo, options.owner
     else
       query.releases options.repo, options.owner
 
   # do the api call
-  github_graphql (token: options.token, query: query), (err, res) ->
+  github_graphql (token: options.token, query: theQuery), (err, res) ->
     if err
       callback err, null
     else
