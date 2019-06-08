@@ -1,9 +1,9 @@
 const versionCheck = require('../lib/main');
 const options = {
-  token: '',
   repo: 'github-version-checker',
   owner: 'axelrindle',
-  currentVersion: require('../package.json').version
+  currentVersion: require('../package.json').version,
+  reduceTraffic: false
 };
 
 versionCheck(options)
