@@ -10,16 +10,13 @@
   "author": "Axel Rindle <axel.rindle@gmx.de>",
   "license": "MIT",
   "dependencies": {
-    "coffeescript": "^2.3.2",
     "github-graphql-client": "^1.0.0",
     "semver": "^5.5.1"
   },
   "devDependencies": {
-    "coffeelint": "^2.1.0",
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "lint": "coffeelint -f coffeelint.json lib/ || true",
     "test": "mocha"
   },
   "files": [

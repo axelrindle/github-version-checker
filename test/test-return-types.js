@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
 // require modules
 const versionCheck = require('../');
 const assert = require('assert');

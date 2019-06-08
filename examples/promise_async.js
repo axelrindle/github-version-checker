@@ -1,9 +1,4 @@
-#!/usr/bin/env node
 (async () => {
-
-  // register coffeescript
-  require('coffeescript/register');
-
   const versionCheck = require('../lib/main');
   const options = {
     token: require('./token'),

@@ -1,9 +1,3 @@
-#!/usr/bin/env node
-'use strict';
-
-// register coffeescript
-require('coffeescript/register');
-
 const versionCheck = require('../lib/main');
 const options = {
   repo: 'github-version-checker',
