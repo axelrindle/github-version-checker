@@ -1,6 +1,6 @@
 {
   "name": "github-version-checker",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Version checker working with GitHub releases.",
   "main": "index.js",
   "keywords": [
