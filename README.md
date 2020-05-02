@@ -12,8 +12,5 @@ $ npm install github-version-checker
 ## Documentation
 [Check the Wiki](https://github.com/axelrindle/github-version-checker/wiki)
 
-## Related
-- [gvc-json-reduce](https://github.com/axelrindle/gvc-json-reduce)
-
 ## License
 [MIT](LICENSE)
