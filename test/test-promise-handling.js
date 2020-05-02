@@ -8,16 +8,14 @@ const options = {
   currentVersion: require('../package.json').version
 };
 
-describe('github-version-checker', function () {
-  describe('#versionCheck with one parameter and correct options', function () {
-    it('should resolve without errors', function (done) {
-      versionCheck(options)
-        .then(function (update) {
-          done();
-        })
-        .catch(function (err) {
-          done(new Error(err));
-        });
-    });
+describe('#versionCheck with one parameter and correct options', function () {
+  it('should resolve without errors', function (done) {
+    versionCheck(options)
+      .then(function (update) {
+        done();
+      })
+      .catch(function (err) {
+        done(new Error(err));
+      });
   });
 });
