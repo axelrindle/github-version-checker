@@ -7,7 +7,7 @@
     "version-checker",
     "github-api"
   ],
-  "author": "Axel Rindle <axel.rindle@gmx.de>",
+  "author": "Axel Rindle <mail@axelrindle.de>",
   "license": "MIT",
   "dependencies": {
     "github-graphql-client": "^1.0.0",
