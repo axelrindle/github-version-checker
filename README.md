@@ -1,3 +1,5 @@
+![CI](https://github.com/axelrindle/github-version-checker/workflows/CI/badge.svg)
+
 # github-version-checker
 > Simple **version checker** working with **GitHub releases** and the **GitHub API**.
 
