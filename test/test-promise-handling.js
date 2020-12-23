@@ -56,7 +56,7 @@ const tester = options => {
 };
 
 const opts1 = {
-	token: process.env.GITHUB_API_TOKEN,
+	token: process.env.GITHUB_TOKEN,
 	repo: 'github-version-checker',
 	owner: 'axelrindle',
 	currentVersion: require('../package.json').version
