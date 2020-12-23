@@ -22,7 +22,7 @@ jobs:
     - run: npm ci
     - run: npm test
       env:
-        GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Run codacy-coverage-reporter
       uses: codacy/codacy-coverage-reporter-action@master
       with:
