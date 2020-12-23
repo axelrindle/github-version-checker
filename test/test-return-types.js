@@ -1,6 +1,6 @@
 // require modules
 const versionCheck = require('../');
-const assert = require('assert');
+const test = require('ava');
 
 const options = {
   repo: 'github-version-checker',
@@ -8,17 +8,13 @@ const options = {
   currentVersion: require('../package.json').version
 };
 
-describe('#versionCheck with two parameters', function () {
-  it('should return null', function (done) {
-    assert.equal(versionCheck(options, function(update, err) {
-      if (err) done(new Error(err));
-      else done();
-    }), null);
-  });
+test('one parameter returns a promise', t => {
+  const promise = versionCheck(options);
+  t.false(promise == null);
+  t.true(promise instanceof Promise);
 });
 
-describe('#versionCheck with only one options parameter', function () {
-  it('should return a Promise', function () {
-    assert.equal(typeof versionCheck(options).then, 'function');
-  });
+test('two parameters return a null', t => {
+  const nothing = versionCheck(options, (error, update) => {});
+  t.true(nothing === null);
 });

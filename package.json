@@ -14,13 +14,13 @@
     "semver": "^5.5.1"
   },
   "devDependencies": {
+    "ava": "^2.4.0",
     "eslint": "^7.16.0",
-    "mocha": "^5.2.0",
     "nyc": "^15.1.0"
   },
   "scripts": {
     "lint": "eslint lib/",
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha"
+    "test": "nyc --reporter=lcov --reporter=text-summary ava"
   },
   "files": [
     "lib/*"
