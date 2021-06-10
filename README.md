@@ -8,6 +8,10 @@
 ## Note on upgrading to **v2.0.0**
 If you are upgrading from a version before **v2.0.0**, please read [**this guide**](MIGRATING-TO-2.0.0.md).
 
+## Supported Node.js versions
+
+`>= 10`
+
 ## Install
 ```bash
 $ npm install github-version-checker
