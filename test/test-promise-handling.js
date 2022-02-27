@@ -9,8 +9,7 @@ const tester = options => {
 	test(`one parameter and correct options returns without errors (${counter})`, t => {
 		t.notThrows(() => {
 			versionCheck(options).then(update => {
-				t.true(update !== undefined);
-				t.true(update !== null);
+				t.truthy(update);
 				t.is(update.name, 'axelrindle/github-version-checker');
 			});
 		});
