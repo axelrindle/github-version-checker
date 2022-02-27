@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES6",
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"checkJs": true,
+	},
+	"include": [
+		"index.js",
+		"lib/**/*.js"
+	]
+}

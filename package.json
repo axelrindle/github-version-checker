@@ -3,6 +3,7 @@
   "version": "2.2.0",
   "description": "Version checker working with GitHub releases.",
   "main": "index.js",
+  "types": "index.d.ts",
   "keywords": [
     "version-checker",
     "github-api"
@@ -14,6 +15,7 @@
     "semver": "^5.5.1"
   },
   "devDependencies": {
+    "@types/node": "^14.18.12",
     "ava": "^3.15.0",
     "eslint": "^7.16.0",
     "nyc": "^15.1.0"
