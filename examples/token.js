@@ -1,1 +1,1 @@
-module.exports = process.env.GITHUB_API_TOKEN;
+module.exports = process.env.GITHUB_API_TOKEN
