@@ -50,12 +50,12 @@ test('scheme-mapper#release fails with invalid object', t => {
 	const error = t.throws(() => {
 		return schemeMapper.release(null);
 	});
-	t.is(error.message, 'Cannot read property \'name\' of null');
+	t.is(error.message, 'The object to map must not be falsy!');
 
 	const error2 = t.throws(() => {
 		return schemeMapper.release(undefined);
 	});
-	t.is(error2.message, 'Cannot read property \'name\' of undefined');
+	t.is(error2.message, 'The object to map must not be falsy!');
 });
 
 test('scheme-mapper#tag maps correctly', t => {
@@ -74,10 +74,10 @@ test('scheme-mapper#tag fails with invalid object', t => {
 	const error = t.throws(() => {
 		return schemeMapper.tag(null);
 	});
-	t.is(error.message, 'Cannot read property \'name\' of null');
+	t.is(error.message, 'The object to map must not be falsy!');
 
 	const error2 = t.throws(() => {
 		return schemeMapper.tag(undefined);
 	});
-	t.is(error2.message, 'Cannot read property \'name\' of undefined');
+	t.is(error2.message, 'The object to map must not be falsy!');
 });
