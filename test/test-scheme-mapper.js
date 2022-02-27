@@ -1,6 +1,6 @@
 // require modules
 const test = require('ava')
-const schemeMapper = require('../lib/scheme-mapper')
+const schemeMapper = require('../lib/util/scheme-mapper')
 
 // define some test objects
 const validReleaseObject = {
