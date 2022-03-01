@@ -93,5 +93,5 @@ type CallbackFunction = (error?: Error, update?: ReleaseDescriptor | TagDescript
 
 type RestHandlerFunction = (res: IncomingMessage) => void
 
-export default function check(options: CheckOptions, callback: CallbackFunction): null | Promise<ReleaseDescriptor | TagDescriptor>
+export default function check(options: CheckOptions, callback?: CallbackFunction): null | Promise<ReleaseDescriptor | TagDescriptor>
 export = check
