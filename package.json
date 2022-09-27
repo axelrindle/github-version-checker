@@ -12,12 +12,12 @@
   "license": "MIT",
   "dependencies": {
     "github-graphql-client": "^1.0.0",
-    "semver": "^7.3.5"
+    "semver": "^7.3.7"
   },
   "devDependencies": {
     "@types/node": "^14.18.12",
-    "ava": "^3.15.0",
-    "eslint": "^8.10.0",
+    "ava": "^4.3.3",
+    "eslint": "^8.24.0",
     "nyc": "^15.1.0"
   },
   "scripts": {
