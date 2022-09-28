@@ -11,7 +11,7 @@
   "author": "Axel Rindle <mail@axelrindle.de>",
   "license": "MIT",
   "dependencies": {
-    "github-graphql-client": "^1.0.0",
+    "@octokit/core": "^4.0.5",
     "semver": "^7.3.7"
   },
   "devDependencies": {
