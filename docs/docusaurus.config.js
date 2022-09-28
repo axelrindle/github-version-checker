@@ -36,10 +36,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/axelrindle/github-version-checker/tree/main/docs',
         },
         blog: false,
         theme: {
@@ -62,6 +59,15 @@ const config = {
             id: 'examples',
             path: 'examples',
             routeBasePath: 'examples',
+            sidebarPath: require.resolve('./sidebars.js'),
+        },
+    ],
+    [
+        '@docusaurus/plugin-content-docs',
+        {
+            id: 'upgrading',
+            path: 'upgrading',
+            routeBasePath: 'upgrading',
             sidebarPath: require.resolve('./sidebars.js'),
         },
     ],
@@ -106,12 +112,31 @@ const config = {
             type: 'doc',
             docId: 'index',
             position: 'left',
+            label: 'Upgrading',
+            docsPluginId: 'upgrading',
+          },
+          {
+            type: 'doc',
+            docId: 'index',
+            position: 'left',
             label: 'Examples',
-            docsPluginId: 'examples'
+            docsPluginId: 'examples',
+          },
+          {
+            type: 'doc',
+            docId: 'index',
+            position: 'left',
+            label: 'Changelog',
+            docsPluginId: 'changelog',
           },
           {
             href: 'https://github.com/axelrindle/github-version-checker',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://www.npmjs.com/package/github-version-checker',
+            label: 'npm',
             position: 'right',
           },
         ],
