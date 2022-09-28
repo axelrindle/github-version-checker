@@ -1,7 +1,15 @@
 {
-	"lcov.path": "coverage/lcov.info",
 	"javascript.preferences.quoteStyle": "single",
 	"typescript.preferences.quoteStyle": "single",
 	"javascript.format.semicolons": "remove",
-	"typescript.format.semicolons": "remove"
+	"typescript.format.semicolons": "remove",
+    "auto-close-tag.activationOnLanguage": [
+        "xml",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "markdown",
+        "mdx"
+    ]
 }
