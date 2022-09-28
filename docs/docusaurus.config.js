@@ -63,7 +63,25 @@ const config = {
             path: 'examples',
             routeBasePath: 'examples',
             sidebarPath: require.resolve('./sidebars.js'),
-            // ... other options
+        },
+    ],
+    [
+        '@docusaurus/plugin-content-docs',
+        {
+            id: 'changelog',
+            path: 'changelog',
+            routeBasePath: 'changelog',
+            sidebarPath: require.resolve('./sidebars.js'),
+            async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+                const sidebarItems = await defaultSidebarItemsGenerator(args);
+                const result = sidebarItems.map((item) => {
+                    if (item.type === 'category') {
+                        return {...item, items: item.items.reverse()};
+                    }
+                    return item;
+                });
+                return result;
+              },
         },
     ],
   ],
