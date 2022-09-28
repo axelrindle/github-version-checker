@@ -6,7 +6,7 @@ on:
     paths:
       - "docs/**"
   workflow_dispatch:
-  
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -37,7 +37,9 @@ jobs:
       - uses: actions/cache@v3
         id: npm-cache
         with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            docs/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/docs/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
