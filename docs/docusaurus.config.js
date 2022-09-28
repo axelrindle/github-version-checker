@@ -18,6 +18,8 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'axelrindle', // Usually your GitHub org/user name.
   projectName: 'github-version-checker', // Usually your repo name.
+  deploymentBranch: 'main',
+  trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -48,7 +50,12 @@ const config = {
   ],
 
   plugins: [
-    require.resolve('@cmfcmf/docusaurus-search-local'),
+    [
+        '@cmfcmf/docusaurus-search-local',
+        {
+            indexBlog: false
+        }
+    ],
     [
         '@docusaurus/plugin-content-docs',
         {
