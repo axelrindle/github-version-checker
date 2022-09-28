@@ -1,5 +1,5 @@
-
-# Created by https://www.gitignore.io/api/node,webstorm+all
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode
 
 ### Node ###
 # Logs
@@ -8,6 +8,11 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
 pids
@@ -20,6 +25,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+*.lcov
 
 # nyc test coverage
 .nyc_output
@@ -40,14 +46,26 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
-typings/
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
 
 # Optional eslint cache
 .eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
 
 # Optional REPL history
 .node_repl_history
@@ -58,104 +76,94 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variable files
 .env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+.parcel-cache
 
-# next.js build output
+# Next.js build output
 .next
+out
 
-# nuxt.js build output
+# Nuxt.js build / generate output
 .nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
 
 # vuepress build output
 .vuepress/dist
 
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
+
 # Serverless directories
-.serverless
+.serverless/
 
-### WebStorm+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+# FuseBox cache
+.fusebox/
 
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
+# DynamoDB Local files
+.dynamodb/
 
-# Generated files
-.idea/**/contentModel.xml
+# TernJS port file
+.tern-port
 
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
 
-# Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
 
-# CMake
-cmake-build-*/
+# Optional stylelint cache
 
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
+# SvelteKit build / generate output
+.svelte-kit
 
-# File-based project format
-*.iws
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-# IntelliJ
-out/
+# Local History for Visual Studio Code
+.history/
 
-# mpeltonen/sbt-idea plugin
-.idea_modules/
+# Built Visual Studio Code Extensions
+*.vsix
 
-# JIRA plugin
-atlassian-ide-plugin.xml
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
-# Cursive Clojure plugin
-.idea/replstate.xml
+# Support for Project snippet scope
+.vscode/*.code-snippets
 
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+# Ignore code-workspaces
+*.code-workspace
 
-# Editor-based Rest Client
-.idea/httpRequests
-
-# Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
-
-### WebStorm+all Patch ###
-# Ignores the whole .idea folder and all .iml files
-# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
-
-.idea/
-
-# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
-
-*.iml
-modules.xml
-.idea/misc.xml
-*.ipr
-
-
-# End of https://www.gitignore.io/api/node,webstorm+all
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
