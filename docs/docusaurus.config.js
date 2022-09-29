@@ -142,7 +142,13 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
+        logo: {
+          alt: 'github-version-checker logo',
+          src: 'img/logo.svg',
+          href: '/',
+          height: 32,
+        },
         copyright: `Copyright © ${new Date().getFullYear()} Axel Rindle & Contributors. Built with Docusaurus.`,
       },
       prism: {

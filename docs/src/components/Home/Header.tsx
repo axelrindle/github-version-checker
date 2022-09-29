@@ -15,7 +15,7 @@ export default function HomepageHeader() {
                 <Content />
                 <div className={styles.buttons}>
                     <Link
-                        className="button button--secondary button--lg"
+                        className="button button--info button--outline button--lg"
                         to="/docs/">
                         Jump right in 🤸‍♂️
                     </Link>
