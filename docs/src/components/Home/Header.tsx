@@ -19,6 +19,11 @@ export default function HomepageHeader() {
                         to="/docs/">
                         Jump right in 🤸‍♂️
                     </Link>
+                    <Link
+                        className="button button--info button--outline button--lg"
+                        to="/examples/">
+                        tl;dr 👀
+                    </Link>
                 </div>
             </div>
         </header>
