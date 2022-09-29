@@ -1,5 +1,11 @@
-const versionCheck = require('../lib/main')
+# Promise
+
+Modern version using a Promise-based approach.
+
+```js
+const versionCheck = require('github-version-checker')
 const options = {
+    // token: '...',
     repo: 'github-version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version
@@ -17,3 +23,4 @@ versionCheck(options)
     .catch(function (error) {
         console.error(error)
     })
+```

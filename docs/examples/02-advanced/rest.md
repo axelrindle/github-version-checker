@@ -1,12 +1,20 @@
-const versionCheck = require('../lib/main')
+# Explicitly call the REST API
+
+There may be scenarios where you explicitly want to call the REST API.
+
+Set the `token` to `false` to accomplish this:
+
+```js
+const versionCheck = require('github-version-checker')
 const options = {
+    token: false,
     repo: 'github-version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version
 }
 
 versionCheck(options)
-    .then(update => {
+    .then(function (update) {
         if (update) { // update is null if there is no update available, so check here
             console.log('An update is available! ' + update.name)
             console.log('You are on version ' + options.currentVersion + '!')
@@ -14,6 +22,7 @@ versionCheck(options)
             console.log('You are up to date.')
         }
     })
-    .catch(error => {
+    .catch(function (error) {
         console.error(error)
     })
+```

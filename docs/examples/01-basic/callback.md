@@ -1,6 +1,11 @@
-const versionCheck = require('../lib/main')
+# Callback
+
+Using a plain old callback.
+
+````js
+const versionCheck = require('github-version-checker')
 const options = {
-    token: require('./token'),
+    // token: '...',
     repo: 'github-version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version
@@ -19,3 +24,4 @@ versionCheck(options, function (error, update) {
         console.log('You are up to date.')
     }
 })
+```

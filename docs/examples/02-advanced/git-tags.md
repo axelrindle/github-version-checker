@@ -1,6 +1,14 @@
-const versionCheck = require('../lib/main')
+# Fetch Git tags instead of GitHub releases
+
+In case your repository does not use GitHub releases but just Git tags a call to the
+releases api won't work.
+
+Fetch the tags instead by setting `fetchTags` to `true`:
+
+```js
+const versionCheck = require('github-version-checker')
 const options = {
-    token: require('./token'),
+    token: 'my-token',
     repo: 'github-version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version,
@@ -20,3 +28,4 @@ versionCheck(options, function (error, update) {
         console.log('You are up to date.')
     }
 })
+```
