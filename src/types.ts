@@ -2,12 +2,12 @@
 
 import { IncomingMessage } from "http"
 
-interface CheckOptions {
+export interface CheckOptions {
     /**
      * A personal access token used for private repositories or to increase
      * the rate limit.
      */
-    token?: string
+    token?: string | false
 
     /**
      * The name of the Github repository to check.
@@ -50,7 +50,7 @@ interface CheckOptions {
 /**
  * Describes the structure of returned tag data.
  */
-interface TagDescriptor {
+export interface TagDescriptor {
     /**
      * The name of the tag.
      *
@@ -62,7 +62,7 @@ interface TagDescriptor {
 /**
  * Describes the structure of returned release data.
  */
-interface ReleaseDescriptor {
+export interface ReleaseDescriptor {
     /**
      * The name of this release.
      */
@@ -89,9 +89,6 @@ interface ReleaseDescriptor {
     url: string
 }
 
-type CallbackFunction = (error?: Error, update?: ReleaseDescriptor | TagDescriptor) => void
+export type CallbackFunction = (error?: Error|string, update?: ReleaseDescriptor | TagDescriptor) => void
 
-type RestHandlerFunction = (res: IncomingMessage) => void
-
-export default function check(options: CheckOptions, callback?: CallbackFunction): null | Promise<ReleaseDescriptor | TagDescriptor>
-export = check
+export type RestHandlerFunction = (res: IncomingMessage) => void

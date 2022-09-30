@@ -1,7 +1,5 @@
-// require modules
-/** @type {import('ava').TestInterface} */
-const test = require('ava')
-const versionCheck = require('../')
+import test from 'ava'
+import versionCheck from '../src/index'
 
 test('fails when trying to exclude pre-releases in the graphql call', async t => {
     await t.throwsAsync(async () => {

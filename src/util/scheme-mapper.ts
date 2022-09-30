@@ -1,5 +1,7 @@
-function validate(obj) {
-    if (!obj) {
+import { ReleaseDescriptor, TagDescriptor } from '../types'
+
+function validate(obj: any) {
+    if (! obj) {
         throw new Error('The object to map must not be falsy!')
     }
 }
@@ -7,10 +9,8 @@ function validate(obj) {
 /**
  * Maps a response object into the form described here:
  * https://github.com/axelrindle/github-version-checker/wiki/API#releases
- *
- * @returns {ReleaseDescriptor}
  */
-module.exports.release = obj => {
+export function release(obj: any): ReleaseDescriptor {
     validate(obj)
 
     return {
@@ -27,10 +27,8 @@ module.exports.release = obj => {
 /**
  * Maps a response object into the form described here:
  * https://github.com/axelrindle/github-version-checker/wiki/API#tags
- *
- * @returns {TagDescriptor}
  */
-module.exports.tag = obj => {
+export function tag(obj: any): TagDescriptor {
     validate(obj)
 
     return {

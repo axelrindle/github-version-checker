@@ -1,11 +1,9 @@
-// require modules
-/** @type {import('ava').TestInterface} */
-const test = require('ava')
-const versionCheck = require('../')
+import test from 'ava'
+import versionCheck from '../src/index'
 
 test('fetching tags returns a more lightweight schema', async t => {
     const update = await versionCheck({
-        token: null,
+        token: false,
         owner: 'axelrindle',
         repo: 'github-version-checker',
         currentVersion: '0.0.1',

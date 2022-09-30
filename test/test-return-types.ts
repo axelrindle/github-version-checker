@@ -1,20 +1,21 @@
-// require modules
-const versionCheck = require('../')
-const test = require('ava')
+import test from 'ava'
+import versionCheck from '../src/index'
 
 const options = {
     repo: 'github-version-checker',
     owner: 'axelrindle',
-    currentVersion: require('../package.json').version
+    currentVersion: '1.0.0'
 }
 
 test('one parameter returns a promise', t => {
     const promise = versionCheck(options)
-    t.false(promise == null)
+    t.false(promise === undefined)
     t.true(promise instanceof Promise)
 })
 
 test('two parameters return a null', t => {
-    const nothing = versionCheck(options, (error, update) => { })
-    t.true(nothing === null)
+    const nothing = versionCheck(options, (_error, _update) => {
+        // ¯\_(ツ)_/¯
+    })
+    t.true(nothing === undefined)
 })

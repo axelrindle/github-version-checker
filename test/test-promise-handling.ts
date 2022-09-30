@@ -1,6 +1,5 @@
-// require modules
-const test = require('ava')
-const versionCheck = require('../')
+import test from 'ava'
+import versionCheck from '../src/index'
 
 let counter = 0
 const tester = options => {
@@ -33,7 +32,7 @@ const tester = options => {
         try {
             await versionCheck(opts1)
         } catch (e) {
-            t.is(e, 'no repository specified')
+            t.is(e.message, 'no repository specified')
         }
 
         const opts2 = Object.assign({}, options)
@@ -41,7 +40,7 @@ const tester = options => {
         try {
             await versionCheck(opts2)
         } catch (e) {
-            t.is(e, 'no owner specified')
+            t.is(e.message, 'no owner specified')
         }
 
         const opts3 = Object.assign({}, options)
@@ -49,7 +48,7 @@ const tester = options => {
         try {
             await versionCheck(opts3)
         } catch (e) {
-            t.is(e, 'no current version given')
+            t.is(e.message, 'no version specified')
         }
     })
 }
