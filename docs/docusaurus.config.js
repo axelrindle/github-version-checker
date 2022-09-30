@@ -115,7 +115,7 @@ const config = {
           href: '/',
           height: 32,
         },
-        copyright: `Copyright © ${new Date().getFullYear()} Axel Rindle & Contributors. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Axel Rindle & Contributors. Built with <a href="https://docusaurus.io/">Docusaurus</a>. Illustrations by <a href="https://undraw.co/">Katerina Limpitsouni</a>.`,
       },
       prism: {
         theme: lightCodeTheme,
