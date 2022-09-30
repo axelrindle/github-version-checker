@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/core'
 import semver from 'semver'
-import { CallbackFunction, CheckOptions } from '../types'
+import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '../types'
 import { release, tag } from '../util/scheme-mapper'
 
 /**
