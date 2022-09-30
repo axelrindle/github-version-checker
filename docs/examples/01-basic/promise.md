@@ -2,7 +2,7 @@
 
 Modern version using a Promise-based approach.
 
-```js
+```js showLineNumbers title="src/util/version-check.js"
 const versionCheck = require('github-version-checker')
 const options = {
     // token: '...',
