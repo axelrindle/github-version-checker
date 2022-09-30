@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'github-version-checker',
   tagline: '🔍 Simple version checker working with GitHub releases and the GitHub API.',
-  url: 'https://axelrindle.github.io/',
+  url: 'https://axelrindle.github.io',
   baseUrl: '/github-version-checker/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -36,7 +36,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/axelrindle/github-version-checker/tree/main/docs',
         },
         blog: false,
         theme: {
@@ -56,28 +55,9 @@ const config = {
     [
         '@docusaurus/plugin-content-docs',
         {
-            id: 'examples',
-            path: 'examples',
-            routeBasePath: 'examples',
-            sidebarPath: require.resolve('./sidebars.js'),
-        },
-    ],
-    [
-        '@docusaurus/plugin-content-docs',
-        {
-            id: 'upgrading',
-            path: 'upgrading',
-            routeBasePath: 'upgrading',
-            sidebarPath: require.resolve('./sidebars.js'),
-        },
-    ],
-    [
-        '@docusaurus/plugin-content-docs',
-        {
             id: 'changelog',
             path: 'changelog',
             routeBasePath: 'changelog',
-            sidebarPath: require.resolve('./sidebars.js'),
             async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
                 const sidebarItems = await defaultSidebarItemsGenerator(args);
                 const result = sidebarItems.map((item) => {
@@ -93,7 +73,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('docusaurus-preset-nonepress').ThemeConfig} */
     ({
       navbar: {
         title: 'github-version-checker',
@@ -107,20 +87,6 @@ const config = {
             docId: 'index',
             position: 'left',
             label: 'Documentation',
-          },
-          {
-            type: 'doc',
-            docId: 'index',
-            position: 'left',
-            label: 'Upgrading',
-            docsPluginId: 'upgrading',
-          },
-          {
-            type: 'doc',
-            docId: 'index',
-            position: 'left',
-            label: 'Examples',
-            docsPluginId: 'examples',
           },
           {
             type: 'doc',

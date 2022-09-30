@@ -1,9 +1,4 @@
----
-sidebar_position: 0
-sidebar_label: Start
----
-
-# Upgrading
+# Upgrade Guide
 
 This section contains for handling major version upgrades.
 

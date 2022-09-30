@@ -1,0 +1,19 @@
+<svg width="160mm" height="90mm" version="1.1" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+    <path d="m64 36c12.184-1.1515 19.816 19.152 32 18 27.789-2.6264 64-54 64-54v90h-160s36.211-51.374 64-54z"
+          fill-opacity=".2"
+          stroke="#000"
+          stroke-dasharray="2.11999988,2.11999988"
+          stroke-dashoffset="0"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-opacity=".4"
+          stroke-width=".265">
+        <animate id="a1"
+                 attributeName="stroke-dashoffset"
+                 repeatCount="indefinite"
+                 begin="0"
+                 values="0;360"
+                 dur="50s"
+                 calcMode="linear" />
+    </path>
+</svg>

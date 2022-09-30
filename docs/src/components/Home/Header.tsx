@@ -21,7 +21,7 @@ export default function HomepageHeader() {
                     </Link>
                     <Link
                         className="button button--info button--outline button--lg"
-                        to="/examples/">
+                        to="/docs/examples/basic/async/">
                         tl;dr 👀
                     </Link>
                 </div>
