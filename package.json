@@ -3,7 +3,7 @@
   "version": "2.3.0",
   "description": "Version checker working with GitHub releases.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "index.d.ts",
   "keywords": [
     "version-checker",
     "github-api"
@@ -41,7 +41,8 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "index.d.ts"
   ],
   "ava": {
     "extensions": [
