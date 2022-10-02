@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - "docs/**"
       - ".github/workflows/docs.yml"
+      - "art/**"
   pull_request:
     branches: [ main ]
   workflow_dispatch:
