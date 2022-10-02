@@ -1,0 +1,44 @@
+name: CLI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "cli/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            cli/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/cli/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm ci
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        working-directory: cli
+      - run: npm run build
+        working-directory: cli
+      - run: npm run package
+        working-directory: cli
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: binaries
+          path: ./cli/pkg/
+          retention-days: 1

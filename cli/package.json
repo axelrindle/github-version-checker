@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "name": "github-version-checker",
+    "scripts": {
+        "build": "tsc",
+        "package": "pkg . --out-path pkg"
+    },
+    "devDependencies": {
+        "@sindresorhus/tsconfig": "^3.0.1",
+        "@types/node": "^18.8.0",
+        "pkg": "^5.8.0",
+        "tsx": "^3.9.0",
+        "typescript": "^4.8.4"
+    },
+    "dependencies": {
+        "github-version-checker": "file:..",
+        "sade": "^1.8.1"
+    },
+    "bin": {
+        "github-version-checker": "./dist/index.js"
+    },
+    "pkg": {
+        "scripts": "dist/index.js",
+        "targets": [
+            "node18-linux-x64",
+            "node18-win-x64",
+            "node18-macos-x64"
+        ]
+    }
+}
