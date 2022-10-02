@@ -10,6 +10,7 @@
         "typescript",
         "typescriptreact",
         "markdown",
-        "mdx"
+        "mdx",
+        "svg"
     ]
 }
