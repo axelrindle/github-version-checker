@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-sidebar_label: Start
+sidebar_label: 🙋‍♂️ Start
 ---
 
 # Changelog
