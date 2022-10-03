@@ -18,7 +18,7 @@ jobs:
       NODE_VERSION: 18
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/common.yml
+      - uses: ./.github/actions/common
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Build
@@ -33,7 +33,7 @@ jobs:
         node-version: [18]
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/common.yml
+      - uses: ./.github/actions/common
         with:
           node-version: ${{ matrix.node-version }}
       - name: Test
