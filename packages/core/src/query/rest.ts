@@ -1,32 +1,7 @@
 import { Octokit } from '@octokit/core'
-import semver from 'semver'
 import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '../types'
+import { compareReleases, compareTags } from '../util/comparator'
 import { release, tag } from '../util/scheme-mapper'
-
-/**
- * @param options The options for the version check.
- * @param json The json response from the api.
- */
-function compare(options: CheckOptions, json: any) {
-    let found = false
-    let version = null
-    for (let i = 0; i < json.length; i++) {
-        version = json[i]
-
-        if (options.excludePrereleases) {
-            if (version['prerelease'] !== undefined && version['prerelease']) {
-                continue
-            }
-        }
-
-        if (semver.gt(version[options.fetchTags ? 'name' : 'tag_name'], options.currentVersion)) {
-            found = true
-            break
-        }
-    }
-
-    return found ? version : null
-}
 
 /**
  * Executes an API call on the Github Rest API (v3) that should return the latest version.
@@ -71,12 +46,10 @@ export default async function rest(options: CheckOptions): Promise<ReleaseDescri
         throw new Error(response.data.message)
     }
 
-    // Compare versions
-    const version = compare(options, response.data)
-    if (version) {
-        const mapper = options.fetchTags ? tag : release
-        return mapper(version)
-    } else {
-        return undefined
+    if (options.fetchTags) {
+        return tag(compareTags(options, response.data))
+    }
+    else {
+        return release(compareReleases(options, response.data))
     }
 }

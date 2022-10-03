@@ -92,3 +92,15 @@ export interface ReleaseDescriptor {
 export type CallbackFunction = (error?: Error|string, update?: ReleaseDescriptor | TagDescriptor) => void
 
 export type RestHandlerFunction = (res: IncomingMessage) => void
+
+export interface RestResponseTag {
+    name: string
+}
+
+export interface RestResponseRelease {
+    name: string
+    tag_name: string
+    prerelease: boolean
+    published_at: string
+    html_url: string
+}
