@@ -25,11 +25,6 @@ export interface CheckOptions {
     currentVersion: string
 
     /**
-     * @deprecated
-     */
-    reduceTraffic?: boolean
-
-    /**
      * Whether to fetch the repositories' git tags instead of the GitHub releases.
      * Useful when no releases are created, but only tags.
      */
