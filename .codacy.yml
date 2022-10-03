@@ -1,8 +1,6 @@
 ---
-engines:
-  eslint:
-  - 'test/**/*'
-
 exclude_paths:
-  - 'examples/**/*'
   - '.github/**/*'
+  - '.vscode/**/*'
+  - 'art/**/*'
+  - 'packages/*/test/**'
