@@ -14,6 +14,14 @@
 
 While versions below 12.x are not officially tested they might work anyway.
 
+## Is this ESM only?
+
+**No.**
+
+This module may be require'd (CommonJS) or imported (ESM).
+
+I do not plan on making this an ESM only module in the near future.
+
 ## Install
 
 ```bash
