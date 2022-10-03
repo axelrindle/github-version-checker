@@ -18,29 +18,9 @@ jobs:
       NODE_VERSION: 18
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+      - uses: ./.github/actions/common.yml
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-      - name: Cache root node_modules
-        id: cache-npm-root
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ steps.npm-cache-dir.outputs.dir }}
-            ./node_modules
-          key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-root-
-      - name: Install dependencies
-        if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
-        run: npm ci
-      - name: Lerna bootstrap
-        run: npx lerna bootstrap
       - name: Build
         run: npx lerna run build
 
@@ -53,29 +33,9 @@ jobs:
         node-version: [18]
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: ./.github/actions/common.yml
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-      - name: Cache root node_modules
-        id: cache-npm-root
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ steps.npm-cache-dir.outputs.dir }}
-            ./node_modules
-          key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-root-
-      - name: Install dependencies
-        if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
-        run: npm ci
-      - name: Lerna bootstrap
-        run: npx lerna bootstrap
       - name: Test
         run: npx lerna run test
         env:
