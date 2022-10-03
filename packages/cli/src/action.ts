@@ -13,7 +13,7 @@ function printPretty(result: any, args: CliArguments) {
 
 function printJson(result: any) {
     const json = JSON.stringify(result)
-    print(json)
+    print(json, false)
 }
 
 export default async function action(args: CliArguments) {
