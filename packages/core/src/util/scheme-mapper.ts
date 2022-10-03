@@ -1,17 +1,13 @@
-import { ReleaseDescriptor, TagDescriptor } from '../types'
-
-function validate(obj: any) {
-    if (! obj) {
-        throw new Error('The object to map must not be falsy!')
-    }
-}
+import { ReleaseDescriptor, RestResponseRelease, RestResponseTag, TagDescriptor } from '../types'
 
 /**
  * Maps a response object into the form described here:
  * https://github.com/axelrindle/github-version-checker/wiki/API#releases
  */
-export function release(obj: any): ReleaseDescriptor {
-    validate(obj)
+export function release(obj: RestResponseRelease|undefined): ReleaseDescriptor|undefined {
+    if (obj === undefined) {
+        return undefined
+    }
 
     return {
         name: obj.name,
@@ -28,8 +24,10 @@ export function release(obj: any): ReleaseDescriptor {
  * Maps a response object into the form described here:
  * https://github.com/axelrindle/github-version-checker/wiki/API#tags
  */
-export function tag(obj: any): TagDescriptor {
-    validate(obj)
+export function tag(obj: RestResponseTag|undefined): TagDescriptor|undefined {
+    if (obj === undefined) {
+        return undefined
+    }
 
     return {
         name: obj.name

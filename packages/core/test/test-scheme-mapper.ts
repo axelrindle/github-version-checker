@@ -43,18 +43,15 @@ test('scheme-mapper#release maps correctly', t => {
         publishedAt: '1. May 2018',
         url: 'https://github.com/axelrindle/github-version-checker/releases/tag/v2.0.0'
     })
+
+    t.is(release(undefined), undefined)
 })
 
 test('scheme-mapper#release fails with invalid object', t => {
     const error = t.throws(() => {
         return release(null)
     })
-    t.is(error.message, 'The object to map must not be falsy!')
-
-    const error2 = t.throws(() => {
-        return release(undefined)
-    })
-    t.is(error2.message, 'The object to map must not be falsy!')
+    t.regex(error.message, /^Cannot read properties of null/g)
 })
 
 test('scheme-mapper#tag maps correctly', t => {
@@ -67,16 +64,13 @@ test('scheme-mapper#tag maps correctly', t => {
     t.deepEqual(mapped2, {
         name: 'axelrindle/github-version-checker'
     })
+
+    t.is(tag(undefined), undefined)
 })
 
 test('scheme-mapper#tag fails with invalid object', t => {
     const error = t.throws(() => {
-        return tag(null)
+        return release(null)
     })
-    t.is(error.message, 'The object to map must not be falsy!')
-
-    const error2 = t.throws(() => {
-        return tag(undefined)
-    })
-    t.is(error2.message, 'The object to map must not be falsy!')
+    t.regex(error.message, /^Cannot read properties of null/g)
 })
