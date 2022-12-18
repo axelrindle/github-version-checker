@@ -16,13 +16,13 @@ runs:
       id: npm-cache-dir
       shell: bash
       run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+          echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
     - name: Cache root node_modules
       id: cache-npm-root
       uses: actions/cache@v3
       with:
         path: |
-          ${{ steps.npm-cache-dir.outputs.dir }}
+          ${{ env.npm_cache_dir }}
           ./node_modules
         key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
         restore-keys: |
