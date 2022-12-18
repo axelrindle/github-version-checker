@@ -12,6 +12,7 @@ program
     .option('--no-pre-releases', 'Excludes pre-releases.', false)
     .option('--token', 'A PAT to use.')
     .option('--json', 'Outputs the raw result data as JSON.', false)
+    .option('--verbose', 'Enables verbose logging.', false)
     .action(action)
 
 program.parse(process.argv)

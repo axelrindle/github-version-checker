@@ -10,5 +10,5 @@ export function print(data: any, newline = true) {
 }
 
 export function printError(data: any, newline = true) {
-    write(process.stderr, data, newline)
+    write(process.stdout, data, newline)
 }

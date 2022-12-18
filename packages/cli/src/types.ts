@@ -6,4 +6,5 @@ export interface CliArguments {
     'no-pre-releases': boolean
     token?: string
     json: boolean
+    verbose: boolean
 }

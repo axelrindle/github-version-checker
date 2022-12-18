@@ -1,5 +1,6 @@
 import versionCheck from 'github-version-checker'
-import { CliArguments } from './types'
+import PrettyError from 'pretty-error'
+import { CliArguments, JsonOutput } from './types'
 import { print, printError } from './util'
 
 function printPretty(result: any, args: CliArguments) {
@@ -9,11 +10,6 @@ function printPretty(result: any, args: CliArguments) {
     } else {
         print('You are up to date.')
     }
-}
-
-function printJson(result: any) {
-    const json = JSON.stringify(result)
-    print(json, false)
 }
 
 export default async function action(args: CliArguments) {
@@ -28,12 +24,21 @@ export default async function action(args: CliArguments) {
         })
 
         if (args.json) {
-            printJson(result)
+            const output: JsonOutput = {
+                type: result === undefined ? 'notfound' : 'outdated',
+                data: result
+            }
+            print(JSON.stringify(output), false)
         }
         else {
             printPretty(result, args)
         }
     } catch (error: any) {
-        printError(error.message)
+        if (args.verbose) {
+            printError(new PrettyError().render(error))
+        }
+        else {
+            printError(error.message)
+        }
     }
 }
