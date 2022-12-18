@@ -17,7 +17,7 @@ jobs:
     env:
       NODE_VERSION: 18
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup
         uses: ./.github/actions/common
         with:
@@ -33,7 +33,7 @@ jobs:
         # node-version: [12, 14, 16, 18]
         node-version: [18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup
         uses: ./.github/actions/common
         with:
