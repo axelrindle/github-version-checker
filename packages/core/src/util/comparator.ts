@@ -13,6 +13,10 @@ export function compareTags(options: CheckOptions, data: RestResponseTag[]): Res
 
 export function compareReleases(options: CheckOptions, data: RestResponseRelease[]): RestResponseRelease|undefined {
     for (const item of data) {
+        if (item.draft) {
+            continue
+        }
+
         if (options.excludePrereleases && item.prerelease) {
             continue
         }
