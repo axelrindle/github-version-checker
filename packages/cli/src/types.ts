@@ -1,3 +1,5 @@
+import { ReleaseDescriptor, TagDescriptor } from 'github-version-checker/types'
+
 export interface CliArguments {
     owner: string
     repository: string
@@ -7,4 +9,9 @@ export interface CliArguments {
     token?: string
     json: boolean
     verbose: boolean
+}
+
+export interface JsonOutput {
+    type: 'notfound'|'outdated'|'error'
+    data: ReleaseDescriptor | TagDescriptor | undefined
 }
