@@ -6,6 +6,7 @@ const validReleaseObject = {
     name: 'axelrindle/github-version-checker',
     tag_name: 'v2.0.0',
     prerelease: false,
+    draft: false,
     published_at: '1. May 2018',
     html_url: 'https://github.com/axelrindle/github-version-checker/releases/tag/v2.0.0'
 }
@@ -13,6 +14,7 @@ const validReleaseObject2 = {
     name: 'axelrindle/github-version-checker',
     tag_name: 'v2.0.0',
     prerelease: false,
+    draft: false,
     published_at: '1. May 2018',
     html_url: 'https://github.com/axelrindle/github-version-checker/releases/tag/v2.0.0',
     lorem: 'ipsum',
@@ -28,6 +30,7 @@ test('scheme-mapper#release maps correctly', t => {
             name: 'v2.0.0'
         },
         isPrerelease: false,
+        isDraft: false,
         publishedAt: '1. May 2018',
         url: 'https://github.com/axelrindle/github-version-checker/releases/tag/v2.0.0'
     })
@@ -40,6 +43,7 @@ test('scheme-mapper#release maps correctly', t => {
             name: 'v2.0.0'
         },
         isPrerelease: false,
+        isDraft: false,
         publishedAt: '1. May 2018',
         url: 'https://github.com/axelrindle/github-version-checker/releases/tag/v2.0.0'
     })
