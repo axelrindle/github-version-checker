@@ -35,6 +35,7 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
+    "clean": "rm -rf .nyc_output coverage dist",
     "build": "tsc",
     "lint": "eslint src/",
     "test": "nyc --reporter=lcov --reporter=text-summary ava",
