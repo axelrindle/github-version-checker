@@ -22,18 +22,42 @@ export default async function graphql(options: CheckOptions): Promise<ReleaseDes
         }
     })
 
-    const { repository } = await octokit.graphql<GraphQlQueryResponseData>(theQuery, {
-        repo: options.repo,
-        owner: options.owner
-    })
-
-    // Retrieve newer version name
-    const newer = options.fetchTags ? repository.refs.nodes[0] : repository.releases.nodes[0]
-
-    // Compare versions
-    if (gt((options.fetchTags ? newer.name : newer.tag.name), options.currentVersion)) {
-        return newer
-    } else {
-        return undefined
+    async function fetch(cursor: string|undefined = undefined) {
+        const { repository } = await octokit.graphql<GraphQlQueryResponseData>(theQuery, {
+            repo: options.repo,
+            owner: options.owner,
+            cursor
+        })
+        return repository
     }
+
+    let cursor: string|undefined = undefined
+    const found = false
+    while (! found) {
+        const repository: any = await fetch(cursor)
+        const entries: any[] = options.fetchTags ? repository.refs.nodes : repository.releases.nodes
+
+        if (entries.length == 0) {
+            return undefined
+        }
+
+        // no drafts please
+        if (! options.fetchTags) {
+            if (entries[0].isDraft && repository.releases.pageInfo.hasNextPage) {
+                cursor = repository.releases.pageInfo.endCursor
+                continue
+            }
+        }
+
+        // Retrieve newer version name
+        const newer = entries[0]
+        const fetchedVersion = options.fetchTags ? newer.name : newer.tagName
+        if (gt(fetchedVersion, options.currentVersion)) {
+            return newer
+        } else {
+            return undefined
+        }
+    }
+
+    return undefined
 }

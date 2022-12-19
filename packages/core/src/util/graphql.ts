@@ -1,13 +1,20 @@
 export const releases = `
-{
+query($repo: String!, $owner: String!, $cursor: String = null) {
     repository(name: $repo, owner: $owner) {
-        releases(last: 1, { field: CREATED_AT, direction: ASC }) {
+        releases(
+          	after: $cursor,
+            first: 1,
+            orderBy: { field: CREATED_AT, direction: DESC }
+        ) {
+            pageInfo {
+              	hasNextPage
+              	endCursor
+            }
             nodes {
                 name
-                tag {
-                    name
-                }
+                tagName
                 isPrerelease
+              	isDraft
                 publishedAt
                 url
             }
@@ -17,7 +24,7 @@ export const releases = `
 `
 
 export const tags = `
-{
+query($repo: String!, $owner: String!) {
     repository(name: $repo, owner: $owner) {
         refs(
             last: 1

@@ -1,6 +1,6 @@
 /// <reference types="node/http" />
 
-import { IncomingMessage } from "http"
+import { IncomingMessage } from 'node:http'
 
 export interface CheckOptions {
     /**
@@ -72,6 +72,11 @@ export interface ReleaseDescriptor {
      * Whether this release is a pre-release.
      */
     isPrerelease: boolean
+
+    /**
+     * Whether this release is a draft.
+     */
+    isDraft: boolean
 
     /**
      * A datetime string indicating the time this release was published.
