@@ -1,9 +1,28 @@
 {
-    "private": true,
-    "name": "cli",
+    "name": "@github-version-checker/cli",
+    "version": "2.3.0",
+    "description": "CLI version of github-version-checker",
+    "bin": "./dist/index.js",
+    "keywords": [
+      "version-checker",
+      "github-api"
+    ],
+    "author": "Axel Rindle <mail@axelrindle.de>",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/axelrindle/github-version-checker.git"
+    },
+    "bugs": {
+      "url": "https://github.com/axelrindle/github-version-checker/issues"
+    },
+    "homepage": "https://axelrindle.github.io/github-version-checker/",
     "scripts": {
+        "clean": "rm -rf .nyc_output coverage dist pkg",
         "build": "tsc",
-        "package": "pkg dist/index.js --output pkg/github-version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64"
+        "start": "tsx src/index.ts",
+        "package": "pkg dist/index.js --output pkg/github-version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64",
+        "prepublishOnly": "npm run build"
     },
     "devDependencies": {
         "@sindresorhus/tsconfig": "^3.0.1",
@@ -16,5 +35,8 @@
         "github-version-checker": "*",
         "pretty-error": "^4.0.0",
         "sade": "^1.8.1"
-    }
+    },
+    "files": [
+      "dist/"
+    ]
 }
