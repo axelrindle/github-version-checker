@@ -15,6 +15,7 @@ export function release(obj: RestResponseRelease|undefined): ReleaseDescriptor|u
             name: obj.tag_name
         },
         isPrerelease: obj.prerelease,
+        isDraft: obj.draft,
         publishedAt: obj.published_at,
         url: obj.html_url
     }

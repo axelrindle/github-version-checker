@@ -101,6 +101,7 @@ export interface RestResponseRelease {
     name: string
     tag_name: string
     prerelease: boolean
+    draft: boolean
     published_at: string
     html_url: string
 }
