@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/core'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '../types'
+import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
 import { compareReleases, compareTags } from '../util/comparator'
 import { release, tag } from '../util/scheme-mapper'
 

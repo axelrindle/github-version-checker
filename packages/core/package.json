@@ -3,8 +3,7 @@
   "version": "2.3.0",
   "description": "Version checker working with GitHub releases.",
   "exports": {
-    ".": "./dist/index.js",
-    "./types": "./dist/types.d.ts"
+    ".": "./dist/index.js"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,16 +26,14 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
-    "@sindresorhus/tsconfig": "^3.0.1",
-    "@types/node": "^14.18.12",
+    "@github-version-checker/api": "*",
     "@types/semver": "^7.3.12",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "ava": "^4.3.3",
     "eslint": "^8.24.0",
     "nyc": "^15.1.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "ts-node": "^10.9.1"
   },
   "scripts": {
     "clean": "rm -rf .nyc_output coverage dist",

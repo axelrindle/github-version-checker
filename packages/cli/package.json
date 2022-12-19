@@ -25,11 +25,9 @@
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
-        "@sindresorhus/tsconfig": "^3.0.1",
-        "@types/node": "^18.8.0",
+        "@github-version-checker/api": "*",
         "pkg": "^5.8.0",
-        "tsx": "^3.9.0",
-        "typescript": "^4.8.4"
+        "tsx": "^3.9.0"
     },
     "dependencies": {
         "github-version-checker": "*",

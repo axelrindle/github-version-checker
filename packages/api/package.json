@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "name": "@github-version-checker/api",
+    "version": "2.3.0",
+    "description": "The common API used by all github-version-checker modules.",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "keywords": [
+        "version-checker",
+        "github-api"
+    ],
+    "author": "Axel Rindle <mail@axelrindle.de>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/axelrindle/github-version-checker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/axelrindle/github-version-checker/issues"
+    },
+    "homepage": "https://axelrindle.github.io/github-version-checker/",
+    "dependencies": {
+        "@sindresorhus/tsconfig": "^3.0.1",
+        "@types/node": "^18.11.17",
+        "typescript": "^4.8.4"
+    },
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "tsc"
+    }
+}

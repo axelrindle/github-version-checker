@@ -1,5 +1,5 @@
 import { gt } from 'semver'
-import { CheckOptions, RestResponseRelease, RestResponseTag } from '../types'
+import { CheckOptions, RestResponseRelease, RestResponseTag } from '@github-version-checker/api'
 
 export function compareTags(options: CheckOptions, data: RestResponseTag[]): RestResponseTag|undefined {
     for (const item of data) {

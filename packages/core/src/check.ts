@@ -1,6 +1,6 @@
 import graphql from './query/graphql'
 import rest from './query/rest'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from './types'
+import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
 
 /**
  * Checks whether a new version is available. Depending on whether a token is given, the

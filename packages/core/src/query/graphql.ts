@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/core'
 import type { GraphQlQueryResponseData } from '@octokit/graphql';
 import { gt } from 'semver'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '../types'
+import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
 import { releases, tags } from '../util/graphql'
 
 /**
@@ -41,11 +41,13 @@ export default async function graphql(options: CheckOptions): Promise<ReleaseDes
             return undefined
         }
 
-        // no drafts please
-        if (! options.fetchTags) {
-            if (entries[0].isDraft && repository.releases.pageInfo.hasNextPage) {
+        const skip = (! options.fetchTags && entries[0].isDraft) || (options.excludePrereleases && entries[0].isPrerelease)
+        if (skip) {
+            if (repository.releases.pageInfo.hasNextPage) {
                 cursor = repository.releases.pageInfo.endCursor
                 continue
+            } else {
+                return undefined
             }
         }
 
