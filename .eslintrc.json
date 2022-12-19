@@ -8,6 +8,9 @@
         "@typescript-eslint"
     ],
     "root": true,
+    "ignorePatterns": [
+        "**/dist/**/*.js"
+    ],
     "rules": {
         "quotes": [
             "error",
