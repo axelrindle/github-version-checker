@@ -27,9 +27,9 @@ export const tags = `
 query($repo: String!, $owner: String!) {
     repository(name: $repo, owner: $owner) {
         refs(
-            last: 1
             refPrefix: "refs/tags/"
-            orderBy: { field: ALPHABETICAL, direction: ASC }
+            first: 1
+            orderBy: { field: TAG_COMMIT_DATE, direction: DESC }
         ) {
             nodes {
                 name
