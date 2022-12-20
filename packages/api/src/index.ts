@@ -89,7 +89,15 @@ export interface ReleaseDescriptor {
     url: string
 }
 
-export type CallbackFunction = (error?: Error|string, update?: ReleaseDescriptor | TagDescriptor) => void
+export interface CheckResult {
+    src: 'rest'|'graphql'
+    type: 'releases'|'tags'
+    update: ReleaseDescriptor | TagDescriptor | undefined
+}
+
+export type CheckFunction = (options: CheckOptions) => Promise<CheckResult>
+
+export type CallbackFunction = (error?: Error|string, update?: CheckResult) => void
 
 export type RestHandlerFunction = (res: IncomingMessage) => void
 

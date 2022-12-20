@@ -1,6 +1,6 @@
+import { CheckFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
 import graphql from './query/graphql'
 import rest from './query/rest'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
 
 /**
  * Checks whether a new version is available. Depending on whether a token is given, the
@@ -9,7 +9,7 @@ import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-
  *
  * @param options The options for the version check.
  */
-export default async function check(options: CheckOptions): Promise<ReleaseDescriptor|TagDescriptor|undefined> {
+const check: CheckFunction = async function(options: CheckOptions): Promise<CheckResult> {
     if (options === null || options === undefined) {
         throw new Error('options object must not be null or undefined!')
     }
@@ -32,12 +32,10 @@ export default async function check(options: CheckOptions): Promise<ReleaseDescr
     // decide what to do
     // when we have a token supplied, we will call the GraphQL API
     if (options.token) {
-        if (options.excludePrereleases) {
-            throw new Error('excludePrereleases option currently unsupported when specifying a token.')
-        }
-
         return await graphql(options)
     } else {
         return await rest(options)
     }
 }
+
+export default check

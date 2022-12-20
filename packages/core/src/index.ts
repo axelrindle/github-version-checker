@@ -1,5 +1,5 @@
+import { CallbackFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
 import check from './check'
-import { CallbackFunction, CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
 
 /**
  * The exported checking function.
@@ -11,7 +11,7 @@ import { CallbackFunction, CheckOptions, ReleaseDescriptor, TagDescriptor } from
 export default function versionCheck(
     options: CheckOptions,
     callback?: CallbackFunction
-): undefined|Promise<ReleaseDescriptor|TagDescriptor|undefined> {
+): undefined | Promise<CheckResult> {
     if (callback) {
         check(options)
             .then(update => callback(undefined, update))

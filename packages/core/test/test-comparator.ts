@@ -1,5 +1,5 @@
 import test from 'ava'
-import { CheckOptions, RestResponseRelease, RestResponseTag } from '../src/types'
+import { CheckOptions, RestResponseRelease, RestResponseTag } from '@github-version-checker/api'
 import { compareReleases, compareTags } from '../src/util/comparator'
 
 const options: CheckOptions = {

@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/core'
 import type { GraphQlQueryResponseData } from '@octokit/graphql';
 import { gt } from 'semver'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
+import { CheckFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
 import { releases, tags } from '../util/graphql'
 
 /**
@@ -12,7 +12,7 @@ import { releases, tags } from '../util/graphql'
  *
  * @param options The options for the version check.
  */
-export default async function graphql(options: CheckOptions): Promise<ReleaseDescriptor|TagDescriptor|undefined> {
+const graphql: CheckFunction = async function(options: CheckOptions): Promise<CheckResult> {
     const theQuery = options.fetchTags ? tags : releases
 
     const octokit = new Octokit({
@@ -31,35 +31,44 @@ export default async function graphql(options: CheckOptions): Promise<ReleaseDes
         return repository
     }
 
+    const result: CheckResult = {
+        src: 'graphql',
+        type: options.fetchTags ? 'tags' : 'releases',
+        update: undefined
+    }
+
     let cursor: string|undefined = undefined
-    const found = false
+    let found = false
     while (! found) {
         const repository: any = await fetch(cursor)
         const entries: any[] = options.fetchTags ? repository.refs.nodes : repository.releases.nodes
 
         if (entries.length == 0) {
-            return undefined
+            return result
         }
 
-        const skip = (! options.fetchTags && entries[0].isDraft) || (options.excludePrereleases && entries[0].isPrerelease)
-        if (skip) {
+        const skip = entries[0].isDraft || (options.excludePrereleases && entries[0].isPrerelease)
+        if (! options.fetchTags && skip) {
             if (repository.releases.pageInfo.hasNextPage) {
                 cursor = repository.releases.pageInfo.endCursor
                 continue
             } else {
-                return undefined
+                return result
             }
         }
 
         // Retrieve newer version name
         const newer = entries[0]
-        const fetchedVersion = options.fetchTags ? newer.name : newer.tagName
+        const fetchedVersion = options.fetchTags ? newer.name : newer.tag.name
         if (gt(fetchedVersion, options.currentVersion)) {
-            return newer
+            result.update = newer
+            found = true
         } else {
-            return undefined
+            return result
         }
     }
 
-    return undefined
+    return result
 }
+
+export default graphql

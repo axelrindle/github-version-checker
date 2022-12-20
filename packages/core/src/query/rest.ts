@@ -1,7 +1,8 @@
 import { Octokit } from '@octokit/core'
-import { CheckOptions, ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
+import { CheckFunction, CheckOptions, CheckResult, RestResponseTag } from '@github-version-checker/api'
 import { compareReleases, compareTags } from '../util/comparator'
 import { release, tag } from '../util/scheme-mapper'
+import semver from 'semver'
 
 /**
  * Executes an API call on the Github Rest API (v3) that should return the latest version.
@@ -11,7 +12,7 @@ import { release, tag } from '../util/scheme-mapper'
  *
  * @param options The options for the version check.
 */
-export default async function rest(options: CheckOptions): Promise<ReleaseDescriptor|TagDescriptor|undefined> {
+const rest: CheckFunction = async function(options: CheckOptions): Promise<CheckResult> {
     // build url
     let apiUrl = '/repos/{owner}/{repo}'
     if (options.fetchTags) {
@@ -36,9 +37,15 @@ export default async function rest(options: CheckOptions): Promise<ReleaseDescri
         }
     })
 
+    const result: CheckResult = {
+        src: 'rest',
+        type: options.fetchTags ? 'tags' : 'releases',
+        update: undefined
+    }
+
     // 404 error occurs, when no releases are found
     if (response.status === 404) {
-        return undefined
+        return result
     }
 
     // status codes other than 200 are treated as an error
@@ -47,9 +54,13 @@ export default async function rest(options: CheckOptions): Promise<ReleaseDescri
     }
 
     if (options.fetchTags) {
-        return tag(compareTags(options, response.data))
+        result.update = tag(compareTags(options, response.data))
     }
     else {
-        return release(compareReleases(options, response.data))
+        result.update = release(compareReleases(options, response.data))
     }
+
+    return result
 }
+
+export default rest
