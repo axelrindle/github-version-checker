@@ -12,7 +12,9 @@ query($repo: String!, $owner: String!, $cursor: String = null) {
             }
             nodes {
                 name
-                tagName
+                tag {
+                    name
+                }
                 isPrerelease
               	isDraft
                 publishedAt
