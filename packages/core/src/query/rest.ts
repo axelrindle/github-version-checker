@@ -54,7 +54,12 @@ const rest: CheckFunction = async function(options: CheckOptions): Promise<Check
     }
 
     if (options.fetchTags) {
-        result.update = tag(compareTags(options, response.data))
+        // sort tags using semver.compare
+        // in case the tag names are inconsistent (e.g. 1.0.0 => 2.0.0 => v3.0.0)
+        const responseData = (response.data as Array<RestResponseTag>)
+            .sort((a, b) => semver.compare(a.name, b.name))
+            .reverse()
+        result.update = tag(compareTags(options, responseData))
     }
     else {
         result.update = release(compareReleases(options, response.data))
