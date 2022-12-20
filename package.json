@@ -7,5 +7,9 @@
     "devDependencies": {
         "lerna": "^5.5.4",
         "nx": "^14.8.2"
+    },
+    "scripts": {
+        "build": "lerna run build",
+        "test": "lerna run test"
     }
 }
