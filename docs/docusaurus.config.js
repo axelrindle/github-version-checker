@@ -73,7 +73,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('docusaurus-preset-nonepress').ThemeConfig} */
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         title: 'github-version-checker',
