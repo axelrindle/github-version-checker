@@ -26,7 +26,7 @@ export default async function action(args: CliArguments) {
         if (args.json) {
             const output: JsonOutput = {
                 type: result === undefined ? 'notfound' : 'outdated',
-                data: result
+                data: result?.update
             }
             print(JSON.stringify(output), false)
         }
