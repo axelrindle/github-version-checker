@@ -96,8 +96,12 @@ const config = {
             docsPluginId: 'changelog',
           },
           {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          },
+          {
             href: 'https://github.com/axelrindle/github-version-checker',
-            label: 'GitHub',
             position: 'right',
             className: 'nav-icon-link nav-github-link',
             'aria-label': 'GitHub',
