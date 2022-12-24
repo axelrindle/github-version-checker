@@ -31,7 +31,9 @@ const check: CheckFunction = async function(options: CheckOptions): Promise<Chec
 
     // decide what to do
     // when we have a token supplied, we will call the GraphQL API
-    if (options.token) {
+    if (options.forceRest) {
+        return await rest(options)
+    } else if (options.token) {
         return await graphql(options)
     } else {
         return await rest(options)

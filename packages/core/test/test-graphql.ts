@@ -16,7 +16,7 @@ test('graphql returns the same releases answer as rest', async (t) => {
     const responseGraphql = await versionCheck(opts) as CheckResult
     t.not(responseGraphql, undefined)
 
-    const responseRest = await versionCheck({ ...opts, token: false }) as CheckResult
+    const responseRest = await versionCheck({ ...opts, forceRest: true }) as CheckResult
     t.not(responseRest, undefined)
 
     t.is(responseGraphql.src, 'graphql')
@@ -28,7 +28,7 @@ test('graphql returns the same tags answer as rest', async (t) => {
     const responseGraphql = await versionCheck({ ...opts, fetchTags: true }) as CheckResult
     t.not(responseGraphql, undefined)
 
-    const responseRest = await versionCheck({ ...opts, token: false, fetchTags: true }) as CheckResult
+    const responseRest = await versionCheck({ ...opts, forceRest: true, fetchTags: true }) as CheckResult
     t.not(responseRest, undefined)
 
     t.is(responseGraphql.src, 'graphql')

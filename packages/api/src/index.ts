@@ -40,6 +40,11 @@ export interface CheckOptions {
      * Currently only works when no token is specified.
      */
     excludePrereleases?: boolean
+
+    /**
+     * Will use the Github REST API (v3) even with a supplied token.
+     */
+    forceRest?: boolean
 }
 
 /**
