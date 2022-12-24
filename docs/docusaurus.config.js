@@ -35,7 +35,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: undefined,
+          versions: {
+            current: {
+              label: '🔜 Next'
+            }
+          }
         },
         blog: false,
         theme: {
