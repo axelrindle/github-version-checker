@@ -4,28 +4,32 @@
     "description": "CLI version of github-version-checker",
     "bin": "./dist/index.js",
     "keywords": [
-      "version-checker",
-      "github-api"
+        "version-checker",
+        "github-api"
     ],
     "author": "Axel Rindle <mail@axelrindle.de>",
     "license": "MIT",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/axelrindle/github-version-checker.git"
+        "type": "git",
+        "url": "git+https://github.com/axelrindle/github-version-checker.git"
     },
     "bugs": {
-      "url": "https://github.com/axelrindle/github-version-checker/issues"
+        "url": "https://github.com/axelrindle/github-version-checker/issues"
     },
     "homepage": "https://axelrindle.github.io/github-version-checker/",
     "scripts": {
         "clean": "rm -rf .nyc_output coverage dist pkg",
         "build": "tsc",
+        "test": "nyc --reporter=lcov --reporter=text-summary ava test/test-*",
         "start": "tsx src/index.ts",
         "package": "pkg dist/index.js --output pkg/github-version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64",
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
         "@github-version-checker/api": "*",
+        "@types/node": "^18.11.17",
+        "ava": "^5.1.0",
+        "nyc": "^15.1.0",
         "pkg": "^5.8.0",
         "tsx": "^3.9.0"
     },
@@ -35,6 +39,15 @@
         "sade": "^1.8.1"
     },
     "files": [
-      "dist/"
-    ]
+        "dist/"
+    ],
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "nodeArguments": [
+            "--loader",
+            "tsx"
+        ]
+    }
 }
