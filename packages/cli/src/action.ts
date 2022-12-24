@@ -31,7 +31,7 @@ export default async function action(args: CliArguments) {
             print(JSON.stringify(output), false)
         }
         else {
-            printPretty(result, args)
+            printPretty(result?.update, args)
         }
     } catch (error: any) {
         if (args.verbose) {
