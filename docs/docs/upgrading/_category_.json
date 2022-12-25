@@ -4,5 +4,8 @@
     "link": {
         "type": "doc",
         "id": "upgrading/index"
+    },
+    "customProps": {
+        "reverse": true
     }
 }

@@ -40,7 +40,17 @@ const config = {
             current: {
               label: '🔜 Next'
             }
-          }
+          },
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            const result = sidebarItems.map((item) => {
+                if (item.type === 'category' && item.customProps?.reverse) {
+                    return {...item, items: item.items.reverse()};
+                }
+                return item;
+            });
+            return result;
+          },
         },
         blog: false,
         theme: {
