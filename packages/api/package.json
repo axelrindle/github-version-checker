@@ -1,5 +1,4 @@
 {
-    "private": true,
     "name": "@github-version-checker/api",
     "version": "2.3.0",
     "description": "The common API used by all github-version-checker modules.",
