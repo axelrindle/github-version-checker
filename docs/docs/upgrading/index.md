@@ -15,5 +15,5 @@ I didn't quite adhere to this convention in the past but will definetely do in t
 Make sure your environment supports a major upgrade of dependencies.
 :::
 
-Also consider a look into the [Changelog](https://github.com/axelrindle/github-version-checker/blob/main/CHANGELOG.md)
+Also consider a look into the [Changelog](/changelog/)
 which states important changes for each release.
