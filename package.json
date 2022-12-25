@@ -2,8 +2,7 @@
     "private": true,
     "name": "github-version-checker",
     "workspaces": [
-        "packages/*",
-        "docs/"
+        "packages/*"
     ],
     "devDependencies": {
         "lerna": "^5.5.4",
