@@ -28,7 +28,7 @@ versionCheck(options, function (error, update) { // callback function
   //...
 });
 ```
-Check the [examples](/docs/examples/) for more examples.
+Check the [examples](./examples/) for more examples.
 
 ### Personal Access Token
 
