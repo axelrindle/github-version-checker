@@ -34,7 +34,7 @@
         "tsx": "^3.9.0"
     },
     "dependencies": {
-        "github-version-checker": "*",
+        "@github-version-checker/core": "*",
         "pretty-error": "^4.0.0",
         "sade": "^1.8.1"
     },

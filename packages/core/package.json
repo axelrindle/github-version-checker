@@ -1,5 +1,5 @@
 {
-  "name": "github-version-checker",
+  "name": "@github-version-checker/core",
   "version": "2.3.0",
   "description": "Version checker working with GitHub releases.",
   "exports": {

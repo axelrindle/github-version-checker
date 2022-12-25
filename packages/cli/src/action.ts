@@ -1,4 +1,4 @@
-import versionCheck from 'github-version-checker'
+import versionCheck from '@github-version-checker/core'
 import PrettyError from 'pretty-error'
 import { CliArguments, JsonOutput } from './types'
 import { print, printError } from './util'
