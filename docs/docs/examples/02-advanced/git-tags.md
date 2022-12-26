@@ -6,7 +6,7 @@ releases api won't work.
 Fetch the tags instead by setting `fetchTags` to `true`:
 
 ```js showLineNumbers title="src/util/version-check.js"
-const versionCheck = require('github-version-checker')
+const versionCheck = require('@github-version-checker/core')
 const options = {
     token: 'my-token',
     repo: 'github-version-checker',
@@ -16,12 +16,13 @@ const options = {
     fetchTags: true
 }
 
-versionCheck(options, function (error, update) {
+versionCheck(options, function (error, result) {
     if (error) {
         console.error(error)
         process.exit(-1)
     }
 
+    const { update } = result
     if (update) {
         console.log('An update is available! ' + update.name)
         console.log('You are on version ' + options.currentVersion + '!')

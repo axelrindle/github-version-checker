@@ -3,7 +3,7 @@
 Modern version using a Promise-based approach.
 
 ```js showLineNumbers title="src/util/version-check.js"
-const versionCheck = require('github-version-checker')
+const versionCheck = require('@github-version-checker/core')
 const options = {
     // token: '...',
     repo: 'github-version-checker',
@@ -12,7 +12,8 @@ const options = {
 }
 
 versionCheck(options)
-    .then(function (update) {
+    .then(function (result) {
+        const { update } = result
         if (update) { // update is null if there is no update available, so check here
             console.log('An update is available! ' + update.name)
             console.log('You are on version ' + options.currentVersion + '!')
