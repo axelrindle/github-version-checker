@@ -2,7 +2,9 @@
     "name": "@github-version-checker/cli",
     "version": "2.3.0",
     "description": "CLI version of github-version-checker",
-    "bin": "./dist/index.js",
+    "bin": {
+        "github-version-checker": "./dist/index.js"
+    },
     "keywords": [
         "version-checker",
         "github-api"
