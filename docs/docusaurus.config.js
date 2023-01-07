@@ -116,13 +116,13 @@ const config = {
             dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           },
           {
-            href: 'https://github.com/axelrindle/version-checker',
+            href: 'https://github.com/axelrindle/github-version-checker',
             position: 'right',
             className: 'nav-icon-link nav-github-link',
             'aria-label': 'GitHub',
           },
           {
-            href: 'https://www.npmjs.com/package/version-checker',
+            href: 'https://www.npmjs.com/package/github-version-checker',
             position: 'right',
             className: 'nav-icon-link nav-npm-link',
             'aria-label': 'npm',
