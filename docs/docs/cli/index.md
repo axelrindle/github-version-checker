@@ -7,7 +7,7 @@ plain-text and JSON-formatted output.
 
 ```
 
-  $ github-version-checker [options]
+  $ version-checker [options]
 
   Options
     -o, --owner              The repository owner. May be a username or organization name.

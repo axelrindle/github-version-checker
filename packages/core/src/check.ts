@@ -1,4 +1,4 @@
-import { CheckFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
+import { CheckFunction, CheckOptions, CheckResult } from '@version-checker/api'
 import graphql from './query/graphql'
 import rest from './query/rest'
 

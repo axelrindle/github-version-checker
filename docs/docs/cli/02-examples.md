@@ -3,9 +3,9 @@
 ## Basic
 
 ```shell
-$ github-version-checker \
+$ version-checker \
     --owner axelrindle \
-    --repository github-version-checker \
+    --repository version-checker \
     --current-version 2.2.0
 ```
 
@@ -17,9 +17,9 @@ You are on version 2.3.0!
 ## With json output
 
 ```shell
-$ github-version-checker --json \
+$ version-checker --json \
     --owner axelrindle \
-    --repository github-version-checker \
+    --repository version-checker \
     --current-version 2.2.0
 ```
 
@@ -34,7 +34,7 @@ $ github-version-checker --json \
     "isPrerelease": false,
     "isDraft": false,
     "publishedAt": "2022-03-18T15:22:03Z",
-    "url": "https://github.com/axelrindle/github-version-checker/releases/tag/2.3.0"
+    "url": "https://github.com/axelrindle/version-checker/releases/tag/2.3.0"
   }
 }
 ```

@@ -1,7 +1,7 @@
 {
-    "name": "@github-version-checker/api",
+    "name": "@version-checker/api",
     "version": "2.3.0",
-    "description": "The common API used by all github-version-checker modules.",
+    "description": "The common API used by all version-checker modules.",
     "exports": {
         ".": "./dist/index.d.ts"
     },

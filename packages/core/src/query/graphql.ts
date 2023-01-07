@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/core'
 import type { GraphQlQueryResponseData } from '@octokit/graphql';
 import { gt } from 'semver'
-import { CheckFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
+import { CheckFunction, CheckOptions, CheckResult } from '@version-checker/api'
 import { releases, tags } from '../util/graphql'
 
 /**

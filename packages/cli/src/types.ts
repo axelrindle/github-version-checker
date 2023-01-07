@@ -1,4 +1,4 @@
-import { ReleaseDescriptor, TagDescriptor } from '@github-version-checker/api'
+import { ReleaseDescriptor, TagDescriptor } from '@version-checker/api'
 
 export interface CliArguments {
     owner: string

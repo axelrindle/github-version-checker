@@ -1,5 +1,5 @@
 import { Octokit } from '@octokit/core'
-import { CheckFunction, CheckOptions, CheckResult, RestResponseTag } from '@github-version-checker/api'
+import { CheckFunction, CheckOptions, CheckResult, RestResponseTag } from '@version-checker/api'
 import { compareReleases, compareTags } from '../util/comparator'
 import { release, tag } from '../util/scheme-mapper'
 import semver from 'semver'

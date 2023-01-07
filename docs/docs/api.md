@@ -7,10 +7,10 @@ sidebar_label: 🧩 API
 
 ```js
 // Require the module
-const versionCheck = require('@github-version-checker/core');
+const versionCheck = require('@version-checker/core');
 
 // Or import
-import versionCheck from '@github-version-checker/core'
+import versionCheck from '@version-checker/core'
 ```
 
 ## `function versionCheck(options, [callback])`

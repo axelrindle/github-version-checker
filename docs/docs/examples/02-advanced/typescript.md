@@ -1,12 +1,12 @@
 # TypeScript
 
 ```ts showLineNumbers title="src/util/version-check.ts"
-import versionCheck from '@github-version-checker/core'
+import versionCheck from '@version-checker/core'
 
 const currentVersion = getAppVersion()
 const { update } = await versionCheck({
     token: 'my-token',
-    repo: 'github-version-checker',
+    repo: 'version-checker',
     owner: 'axelrindle',
     currentVersion,
 })

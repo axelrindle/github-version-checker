@@ -1,6 +1,6 @@
 import test from 'ava'
 import versionCheck from '../src/check'
-import { CheckOptions, CheckResult } from '@github-version-checker/api'
+import { CheckOptions, CheckResult } from '@version-checker/api'
 
 if (! process.env['GITHUB_TOKEN']) {
     throw new Error('No GITHUB_TOKEN specified!')

@@ -6,10 +6,10 @@ releases api won't work.
 Fetch the tags instead by setting `fetchTags` to `true`:
 
 ```js showLineNumbers title="src/util/version-check.js"
-const versionCheck = require('@github-version-checker/core')
+const versionCheck = require('@version-checker/core')
 const options = {
     token: 'my-token',
-    repo: 'github-version-checker',
+    repo: 'version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version,
     // highlight-next-line

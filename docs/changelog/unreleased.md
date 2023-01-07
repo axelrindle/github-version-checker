@@ -26,6 +26,6 @@ sidebar_position: 1
 
 ## Other
 
-- Documentation an other stuff is now hosted at https://axelrindle.github.io/github-version-checker/
+- Documentation an other stuff is now hosted at https://axelrindle.github.io/version-checker/
 - Moved to TypeScript.
 - Using [Lerna](https://lerna.js.org/) for monorepo management.

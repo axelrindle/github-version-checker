@@ -3,10 +3,10 @@
 Modern version using a Promise-based approach.
 
 ```js showLineNumbers title="src/util/version-check.js"
-const versionCheck = require('@github-version-checker/core')
+const versionCheck = require('@version-checker/core')
 const options = {
     // token: '...',
-    repo: 'github-version-checker',
+    repo: 'version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version
 }

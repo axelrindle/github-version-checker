@@ -1,7 +1,7 @@
 {
-    "name": "@github-version-checker/cli",
+    "name": "@version-checker/cli",
     "version": "2.3.0",
-    "description": "CLI version of github-version-checker",
+    "description": "CLI version of version-checker",
     "bin": {
         "github-version-checker": "./dist/index.js"
     },
@@ -24,11 +24,11 @@
         "build": "tsc",
         "test": "nyc --reporter=lcov --reporter=text-summary ava test/test-*",
         "start": "tsx src/index.ts",
-        "package": "pkg dist/index.js --output pkg/github-version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64",
+        "package": "pkg dist/index.js --output pkg/version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64,node18-linux-arm64,node18-win-arm64,node18-macos-arm64",
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
-        "@github-version-checker/api": "*",
+        "@version-checker/api": "*",
         "@types/node": "^18.11.17",
         "ava": "^5.1.0",
         "nyc": "^15.1.0",
@@ -36,7 +36,7 @@
         "tsx": "^3.9.0"
     },
     "dependencies": {
-        "@github-version-checker/core": "*",
+        "@version-checker/core": "*",
         "pretty-error": "^4.0.0",
         "sade": "^1.8.1"
     },

@@ -2,7 +2,7 @@
 import sade from 'sade'
 import action from './action'
 
-const program = sade('github-version-checker', true)
+const program = sade('version-checker', true)
 
 program
     .version('dev')

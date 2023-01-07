@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'github-version-checker',
+  title: 'version-checker',
   tagline: '🔍 Simple version checker working with GitHub releases and the GitHub API.',
   url: 'https://axelrindle.github.io',
   baseUrl: '/github-version-checker/',
@@ -91,9 +91,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'github-version-checker',
+        title: 'version-checker',
         logo: {
-          alt: 'github-version-checker logo',
+          alt: 'version-checker logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -116,13 +116,13 @@ const config = {
             dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           },
           {
-            href: 'https://github.com/axelrindle/github-version-checker',
+            href: 'https://github.com/axelrindle/version-checker',
             position: 'right',
             className: 'nav-icon-link nav-github-link',
             'aria-label': 'GitHub',
           },
           {
-            href: 'https://www.npmjs.com/package/github-version-checker',
+            href: 'https://www.npmjs.com/package/version-checker',
             position: 'right',
             className: 'nav-icon-link nav-npm-link',
             'aria-label': 'npm',
@@ -132,7 +132,7 @@ const config = {
       footer: {
         style: 'light',
         logo: {
-          alt: 'github-version-checker logo',
+          alt: 'version-checker logo',
           src: 'img/logo.svg',
           href: '/',
           height: 32,

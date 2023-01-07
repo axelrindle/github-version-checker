@@ -4,6 +4,14 @@
 [![Codacy grade](https://img.shields.io/codacy/grade/f82826738d2b43b1b8ba40dd780d1784?logo=codacy)](https://www.codacy.com/gh/axelrindle/github-version-checker/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=axelrindle/github-version-checker&amp;utm_campaign=Badge_Grade)
 [![Codacy coverage](https://img.shields.io/codacy/coverage/f82826738d2b43b1b8ba40dd780d1784?logo=codacy)](https://www.codacy.com/gh/axelrindle/github-version-checker/dashboard?utm_source=github.com&utm_medium=referral&utm_content=axelrindle/github-version-checker&utm_campaign=Badge_Coverage)
 
+---
+
+🚧 **Notice** 🚧
+
+*This project is being renamed to just **version-checker** as I plan to support other platforms than Github in the future.*
+
+---
+
 # github-version-checker
 
 > Simple **version checker** working with **GitHub releases** and the **GitHub API**.
@@ -25,12 +33,12 @@ I do not plan on making this an ESM only module in the near future.
 ## Install
 
 ```bash
-$ npm install github-version-checker
+$ npm install @version-checker/core
 ```
 
 ## Documentation
 
-[github-version-checker (axelrindle.github.io)](https://axelrindle.github.io/github-version-checker/)
+[version-checker (axelrindle.github.io)](https://axelrindle.github.io/github-version-checker/)
 
 ## License
 

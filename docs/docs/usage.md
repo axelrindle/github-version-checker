@@ -7,13 +7,13 @@ sidebar_label: 🎈 Usage
 
 ```javascript
 // require modules
-const versionCheck = require('github-version-checker');
+const versionCheck = require('version-checker');
 const pkg = require('./package.json'); // or whereever your package.json lies
 
 // version check options (for details see below)
 const options = {
   token: 'PUT-YOUR-TOKEN-HERE',                      // personal access token (can be omitted to use the v3 api)
-  repo: 'github-version-checker',                    // repository name
+  repo: 'version-checker',                    // repository name
   owner: 'axelrindle',                               // repository owner
   currentVersion: pkg.version,                       // your app's current version
 };

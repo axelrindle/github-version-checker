@@ -5,11 +5,11 @@ There may be scenarios where you explicitly want to call the REST API.
 Set the `token` to `false` to accomplish this:
 
 ```js showLineNumbers title="src/util/version-check.js"
-const versionCheck = require('@github-version-checker/core')
+const versionCheck = require('@version-checker/core')
 const options = {
     // highlight-next-line
     token: false,
-    repo: 'github-version-checker',
+    repo: 'version-checker',
     owner: 'axelrindle',
     currentVersion: require('../package.json').version
 }

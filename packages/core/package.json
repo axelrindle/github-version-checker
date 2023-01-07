@@ -1,5 +1,5 @@
 {
-  "name": "@github-version-checker/core",
+  "name": "@version-checker/core",
   "version": "2.3.0",
   "description": "Version checker working with GitHub releases.",
   "exports": {
@@ -26,7 +26,7 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
-    "@github-version-checker/api": "*",
+    "@version-checker/api": "*",
     "@types/semver": "^7.3.12",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
@@ -45,6 +45,9 @@
   "files": [
     "dist/"
   ],
+  "engines": {
+    "node": ">=14.16"
+  },
   "ava": {
     "extensions": [
       "ts"

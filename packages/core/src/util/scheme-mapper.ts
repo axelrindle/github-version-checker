@@ -1,4 +1,4 @@
-import { ReleaseDescriptor, RestResponseRelease, RestResponseTag, TagDescriptor } from '@github-version-checker/api'
+import { ReleaseDescriptor, RestResponseRelease, RestResponseTag, TagDescriptor } from '@version-checker/api'
 
 /**
  * Maps a response object into the form described here:

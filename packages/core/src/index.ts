@@ -1,4 +1,4 @@
-import { CallbackFunction, CheckOptions, CheckResult } from '@github-version-checker/api'
+import { CallbackFunction, CheckOptions, CheckResult } from '@version-checker/api'
 import check from './check'
 
 /**
@@ -8,7 +8,7 @@ import check from './check'
  * @param callback An optional callback to pass the result to.
  *                 Can be omitted to return a Promise.
  */
-export default function versionCheck(
+function versionCheck(
     options: CheckOptions,
     callback?: CallbackFunction
 ): undefined | Promise<CheckResult> {
@@ -21,3 +21,7 @@ export default function versionCheck(
         return check(options)
     }
 }
+
+export default versionCheck
+//@ts-ignore
+export = versionCheck
