@@ -3,11 +3,11 @@ import versionCheck from '../src/index'
 
 test('fetching tags returns a more lightweight schema', async t => {
     const { type, update } = await versionCheck({
-        token: false,
         owner: 'axelrindle',
         repo: 'github-version-checker',
         currentVersion: '0.0.1',
-        fetchTags: true
+        fetchTags: true,
+        forceRest: true,
     })
 
     t.is(type, 'tags')
