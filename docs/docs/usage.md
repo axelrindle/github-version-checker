@@ -7,7 +7,7 @@ sidebar_label: 🎈 Usage
 
 ```javascript
 // require modules
-const versionCheck = require('version-checker');
+const versionCheck = require('@version-checker/core');
 const pkg = require('./package.json'); // or whereever your package.json lies
 
 // version check options (for details see below)
