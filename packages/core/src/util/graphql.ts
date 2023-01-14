@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 export const releases = `
 query($repo: String!, $owner: String!, $cursor: String = null) {
     repository(name: $repo, owner: $owner) {

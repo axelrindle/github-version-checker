@@ -8,9 +8,6 @@
         "@typescript-eslint"
     ],
     "root": true,
-    "ignorePatterns": [
-        "**/dist/**/*.js"
-    ],
     "rules": {
         "quotes": [
             "error",
@@ -22,6 +19,7 @@
             {
                 "argsIgnorePattern": "^_"
             }
-        ]
+        ],
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 }

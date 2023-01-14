@@ -45,11 +45,11 @@ export default function Version(): JSX.Element {
     const latestVersion = useLatestVersion(docsPluginId)
     const currentVersion = versions.find(
         (version) => version.name === 'current',
-    )!
+    )
     const pastVersions = versions.filter(
         (version) => version !== latestVersion && version.name !== 'current',
     )
-    const repoUrl = `https://github.com/${organizationName!}/${projectName!}`
+    const repoUrl = `https://github.com/${organizationName}/${projectName}`
 
     return (
         <Layout

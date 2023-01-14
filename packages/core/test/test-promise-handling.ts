@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import test from 'ava'
 import versionCheck from '../src/index'
 

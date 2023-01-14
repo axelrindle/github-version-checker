@@ -1,62 +1,62 @@
 {
-  "name": "@version-checker/core",
-  "version": "3.0.0-rc.1",
-  "description": "Version checker working with GitHub releases.",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "keywords": [
-    "version-checker",
-    "github-api"
-  ],
-  "author": "Axel Rindle <mail@axelrindle.de>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/axelrindle/github-version-checker.git"
-  },
-  "bugs": {
-    "url": "https://github.com/axelrindle/github-version-checker/issues"
-  },
-  "homepage": "https://axelrindle.github.io/github-version-checker/",
-  "dependencies": {
-    "@octokit/core": "^4.0.5",
-    "@version-checker/api": "^3.0.0-rc.1",
-    "semver": "^7.3.7"
-  },
-  "devDependencies": {
-    "@types/semver": "^7.3.12",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "ava": "^4.3.3",
-    "eslint": "^8.24.0",
-    "nyc": "^15.1.0",
-    "ts-node": "^10.9.1"
-  },
-  "scripts": {
-    "clean": "rm -rf .nyc_output coverage dist",
-    "build": "tsc",
-    "lint": "eslint src/",
-    "test": "nyc --reporter=lcov --reporter=text-summary ava",
-    "prepublishOnly": "npm run build"
-  },
-  "files": [
-    "dist/"
-  ],
-  "engines": {
-    "node": ">=14.16"
-  },
-  "ava": {
-    "extensions": [
-      "ts"
+    "name": "@version-checker/core",
+    "version": "3.0.0-rc.1",
+    "description": "Version checker working with GitHub releases.",
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "keywords": [
+        "version-checker",
+        "github-api"
     ],
-    "require": [
-      "ts-node/register/transpile-only"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "author": "Axel Rindle <mail@axelrindle.de>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/axelrindle/github-version-checker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/axelrindle/github-version-checker/issues"
+    },
+    "homepage": "https://axelrindle.github.io/github-version-checker/",
+    "dependencies": {
+        "@octokit/core": "^4.0.5",
+        "@version-checker/api": "^3.0.0-rc.1",
+        "semver": "^7.3.7"
+    },
+    "devDependencies": {
+        "@types/semver": "^7.3.12",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
+        "@typescript-eslint/parser": "^5.38.1",
+        "ava": "^4.3.3",
+        "eslint": "^8.24.0",
+        "nyc": "^15.1.0",
+        "ts-node": "^10.9.1"
+    },
+    "scripts": {
+        "clean": "rm -rf .nyc_output coverage dist",
+        "build": "tsc",
+        "lint": "eslint src/",
+        "test": "nyc --reporter=lcov --reporter=text-summary ava",
+        "prepublishOnly": "npm run build"
+    },
+    "files": [
+        "dist/"
+    ],
+    "engines": {
+        "node": ">=14.16"
+    },
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register/transpile-only"
+        ]
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }

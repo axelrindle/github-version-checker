@@ -7,11 +7,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lato&display=swap');
 
 :root {
-  --ifm-font-family-base: 'Lato', sans-serif;
-  --ifm-color-primary: #C457FF;
-  /* --ifm-color-secondary: #542344; */
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-font-family-base: 'Lato', sans-serif;
+    --ifm-color-primary: #C457FF;
+    /* --ifm-color-secondary: #542344; */
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 .hero__title,
@@ -21,7 +21,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 img[alt~="undraw"] {

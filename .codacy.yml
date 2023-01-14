@@ -1,7 +1,7 @@
 ---
 exclude_paths:
-  - '.github/**/*'
-  - '.vscode/**/*'
-  - 'art/**/*'
-  - 'packages/*/test/**'
-  - 'docs/*.js'
+  - ".github/**/*"
+  - ".vscode/**/*"
+  - "art/**/*"
+  - "packages/*/test/**"
+  - "docs/*.js"

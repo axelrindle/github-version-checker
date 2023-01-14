@@ -1,9 +1,10 @@
+import { ReleaseDescriptor, TagDescriptor } from '@version-checker/api'
 import versionCheck from '@version-checker/core'
 import PrettyError from 'pretty-error'
 import { CliArguments, JsonOutput } from './types'
 import { print, printError } from './util'
 
-function printPretty(result: any, args: CliArguments) {
+function printPretty(result: ReleaseDescriptor | TagDescriptor | undefined, args: CliArguments) {
     if (result) { // update is null if there is no update available, so check here
         print('An update is available! ' + result.name)
         print('You are on version ' + args['current-version'] + '!')
@@ -33,6 +34,7 @@ export default async function action(args: CliArguments) {
         else {
             printPretty(result?.update, args)
         }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         if (args.verbose) {
             printError(new PrettyError().render(error))

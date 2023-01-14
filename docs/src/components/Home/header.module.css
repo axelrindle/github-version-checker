@@ -1,26 +1,26 @@
 .heroBanner {
-  flex: 1 0 auto;
-  padding: 8rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  background-color: #5E1B82;
-  background-image: url('/img/header.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    flex: 1 0 auto;
+    padding: 8rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-color: #5E1B82;
+    background-image: url('/img/header.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 4rem .25rem;
-  }
+    .heroBanner {
+        padding: 4rem .25rem;
+    }
 }
 
 .buttons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
