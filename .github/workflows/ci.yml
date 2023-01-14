@@ -2,13 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths-ignore:
       - "art/**"
       - "docs/**"
       - ".github/workflows/docs.yml"
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
