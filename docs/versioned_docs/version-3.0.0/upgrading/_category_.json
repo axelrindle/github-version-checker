@@ -1,0 +1,11 @@
+{
+    "label": "🔝 Upgrade Guide",
+    "position": 6,
+    "link": {
+        "type": "doc",
+        "id": "upgrading/index"
+    },
+    "customProps": {
+        "reverse": true
+    }
+}
