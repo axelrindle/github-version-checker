@@ -51,5 +51,8 @@
             "--loader",
             "tsx"
         ]
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

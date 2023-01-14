@@ -55,5 +55,8 @@
     "require": [
       "ts-node/register/transpile-only"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
