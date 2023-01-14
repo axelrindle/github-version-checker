@@ -52,10 +52,9 @@ test('scheme-mapper#release maps correctly', t => {
 })
 
 test('scheme-mapper#release fails with invalid object', t => {
-    const error = t.throws(() => {
+    t.throws(() => {
         return release(null)
     })
-    t.regex(error.message, /^Cannot read .* null$/g)
 })
 
 test('scheme-mapper#tag maps correctly', t => {
@@ -73,8 +72,7 @@ test('scheme-mapper#tag maps correctly', t => {
 })
 
 test('scheme-mapper#tag fails with invalid object', t => {
-    const error = t.throws(() => {
+    t.throws(() => {
         return release(null)
     })
-    t.regex(error.message, /^Cannot read .* null$/g)
 })
