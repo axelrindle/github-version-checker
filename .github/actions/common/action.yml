@@ -30,10 +30,13 @@ runs:
     - name: Update npm
       shell: bash
       run: npm i -g npm
-    - name: Install dependencies
-      if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
+    - name: Install lerna
       shell: bash
-      run: npm ci
+      run: npm i -g lerna@6
+    # - name: Install dependencies
+    #   if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
+    #   shell: bash
+    #   run: npm ci
     - name: Lerna bootstrap
       shell: bash
       run: npx lerna bootstrap
