@@ -24,6 +24,7 @@ runs:
         path: |
           ${{ env.npm_cache_dir }}
           ./node_modules
+          ./packages/*/node_modules
         key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-root-
@@ -33,10 +34,7 @@ runs:
     - name: Install lerna
       shell: bash
       run: npm i -g lerna@6
-    # - name: Install dependencies
-    #   if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
-    #   shell: bash
-    #   run: npm ci
     - name: Lerna bootstrap
+      if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
       shell: bash
       run: npx lerna bootstrap
