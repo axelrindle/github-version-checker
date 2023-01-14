@@ -1,6 +1,6 @@
 {
     "name": "@version-checker/cli",
-    "version": "2.3.0",
+    "version": "3.0.0-rc.1",
     "description": "CLI version of version-checker",
     "bin": {
         "github-version-checker": "./dist/index.js"
@@ -28,15 +28,15 @@
         "prepublishOnly": "npm run build"
     },
     "devDependencies": {
-        "@version-checker/api": "*",
         "@types/node": "^18.11.17",
+        "@version-checker/api": "^3.0.0-rc.1",
         "ava": "^5.1.0",
         "nyc": "^15.1.0",
         "pkg": "^5.8.0",
         "tsx": "^3.9.0"
     },
     "dependencies": {
-        "@version-checker/core": "*",
+        "@version-checker/core": "^3.0.0-rc.1",
         "pretty-error": "^4.0.0",
         "sade": "^1.8.1"
     },

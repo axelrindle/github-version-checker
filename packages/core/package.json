@@ -1,6 +1,6 @@
 {
   "name": "@version-checker/core",
-  "version": "2.3.0",
+  "version": "3.0.0-rc.1",
   "description": "Version checker working with GitHub releases.",
   "exports": {
     ".": "./dist/index.js"
@@ -26,10 +26,10 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
-    "@version-checker/api": "*",
     "@types/semver": "^7.3.12",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
+    "@version-checker/api": "^3.0.0-rc.1",
     "ava": "^4.3.3",
     "eslint": "^8.24.0",
     "nyc": "^15.1.0",
