@@ -18,9 +18,13 @@
 
 ## Supported Node.js versions
 
-`>= 12`
+`>= 14`
 
-While versions below 12.x are not officially tested they might work anyway.
+While versions below 14.x are not officially tested they might work anyway.
+
+The build works on 12.x so usage should be safe.
+
+Everything below 12.x is not guaranteed to work.
 
 ## Is this ESM only?
 
