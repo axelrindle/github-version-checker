@@ -1,7 +1,7 @@
 # Command Line Interface (CLI)
 
-The CLI is planned to be releases with v3.0.0 and offers to perform a version check in non Node.js environments. It supports
-plain-text and JSON-formatted output.
+The CLI offers to perform a version check in non-Node.js environments.
+It supports plain-text and JSON-formatted output.
 
 ## Usage
 
