@@ -47,7 +47,7 @@ jobs:
         id: coverage-files
         run: |
           LCOV_FILES=$(find packages/ -type f -name "lcov.info" | paste -s -d ',' -)
-          echo "lcov_files=$LCOV_FILES" >> $GITHUB_ENV
+          echo "lcov_files=$LCOV_FILES" >> "$GITHUB_ENV"
       - name: Run codacy-coverage-reporter
         if: github.event_name == 'push'
         uses: codacy/codacy-coverage-reporter-action@master
