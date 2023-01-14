@@ -12,22 +12,23 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Get npm cache directory
-      id: npm-cache-dir
-      shell: bash
-      run: |
-        echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
-    - name: Cache root node_modules
-      id: cache-npm-root
-      uses: actions/cache@v3
-      with:
-        path: |
-          ${{ env.npm_cache_dir }}
-          ./node_modules
-          ./packages/*/node_modules
-        key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-root-
+    # FIXME: Caching doesn't seem to work well with lerna...
+    # - name: Get npm cache directory
+    #   id: npm-cache-dir
+    #   shell: bash
+    #   run: |
+    #     echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
+    # - name: Cache root node_modules
+    #   id: cache-npm-root
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: |
+    #       ${{ env.npm_cache_dir }}
+    #       ./node_modules
+    #       ./packages/*/node_modules
+    #     key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-node-root-
     - name: Update npm
       shell: bash
       run: npm i -g npm
@@ -35,6 +36,6 @@ runs:
       shell: bash
       run: npm i -g lerna@6
     - name: Lerna bootstrap
-      if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
+      # if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
       shell: bash
       run: npx lerna bootstrap
