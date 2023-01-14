@@ -1,11 +1,13 @@
 #!/usr/bin/env node
+import { readFileSync } from 'fs'
 import sade from 'sade'
 import action from './action'
 
+const { version } = JSON.parse(readFileSync('./package.json').toString())
 const program = sade('version-checker', true)
 
 program
-    .version('dev')
+    .version(version)
     .option('-o, --owner', 'The repository owner. May be a username or organization name.')
     .option('-r, --repository', 'The repository name.')
     .option('-c, --current-version', 'The current application version.')
