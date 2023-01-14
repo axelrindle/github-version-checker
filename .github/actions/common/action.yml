@@ -28,6 +28,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-node-root-
     - name: Update npm
+      shell: bash
       run: npm i -g npm
     - name: Install dependencies
       if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
