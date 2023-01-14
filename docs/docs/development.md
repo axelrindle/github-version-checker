@@ -5,14 +5,14 @@ sidebar_label: 👨‍💻 Development & Contributing
 
 # Development & Contributing
 
-Be sure to read the [Code of Conduct](https://github.com/axelrindle/version-checker/blob/main/CODE_OF_CONDUCT.md)
+Be sure to read the [Code of Conduct](https://github.com/axelrindle/github-version-checker/blob/main/CODE_OF_CONDUCT.md)
 
 ## Setup
 
 First of all clone the git repository :)
 
 ```shell
-$ git clone https://github.com/axelrindle/version-checker.git
+$ git clone https://github.com/axelrindle/github-version-checker.git
 ```
 
 and then install the dependencies
