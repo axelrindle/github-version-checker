@@ -27,6 +27,8 @@ runs:
         key: ${{ runner.os }}-node-root-${{ hashFiles('./package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-root-
+    - name: Update npm
+      run: npm i -g npm
     - name: Install dependencies
       if: ${{ steps.cache-npm-root.outputs.cache-hit != 'true' }}
       shell: bash
