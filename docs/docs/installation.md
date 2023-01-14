@@ -14,5 +14,5 @@ $ npm install @version-checker/core
 For legacy versions (<= 3) use the single package:
 
 ```shell
-$ npm install version-checker
+$ npm install github-version-checker
 ```
