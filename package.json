@@ -5,8 +5,7 @@
         "packages/*"
     ],
     "devDependencies": {
-        "lerna": "^6.4.1",
-        "nx": "^14.8.2"
+        "lerna": "^6.4.1"
     },
     "scripts": {
         "build": "lerna run build",
