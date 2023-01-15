@@ -1,6 +1,6 @@
 {
     "name": "@version-checker/core",
-    "version": "3.0.0-rc.1",
+    "version": "3.0.0-rc.2",
     "description": "Version checker working with GitHub releases.",
     "exports": {
         ".": "./dist/index.js"
@@ -23,7 +23,7 @@
     "homepage": "https://axelrindle.github.io/github-version-checker/",
     "dependencies": {
         "@octokit/core": "^4.0.5",
-        "@version-checker/api": "^3.0.0-rc.1",
+        "@version-checker/api": "^3.0.0-rc.2",
         "semver": "^7.3.7"
     },
     "devDependencies": {
