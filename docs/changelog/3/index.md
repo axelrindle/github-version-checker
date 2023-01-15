@@ -1,6 +1,6 @@
 # 3.0.0
 
-> Released on `2013-01-14`
+> Not yet released [due to problems with lerna](https://github.com/lerna/lerna/issues/3499)
 
 ## Added
 
