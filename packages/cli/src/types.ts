@@ -5,7 +5,7 @@ export interface CliArguments {
     repository: string
     'current-version': string
     tags?: boolean
-    'no-pre-releases': boolean
+    'pre-releases': boolean
     token?: string
     json: boolean
     verbose: boolean

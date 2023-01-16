@@ -12,10 +12,10 @@ program
     .option('-r, --repository', 'The repository name.')
     .option('-c, --current-version', 'The current application version.')
     .option('-t, --tags', 'Fetches tags instead of releases.')
-    .option('--no-pre-releases', 'Excludes pre-releases.', false)
+    .option('--no-pre-releases', 'Excludes pre-releases.')
     .option('--token', 'A PAT to use.')
-    .option('--json', 'Outputs the raw result data as JSON.', false)
-    .option('--verbose', 'Enables verbose logging.', false)
+    .option('--json', 'Outputs the raw result data as JSON.')
+    .option('--verbose', 'Enables verbose logging.')
     .action(action)
 
 program.parse(process.argv)

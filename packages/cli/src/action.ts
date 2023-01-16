@@ -20,7 +20,7 @@ export default async function action(args: CliArguments) {
             repo: args.repository,
             currentVersion: args['current-version'],
             fetchTags: args.tags === true,
-            excludePrereleases: args['no-pre-releases'] === true,
+            excludePrereleases: args['pre-releases'] === false,
             token: args.token
         })
 
