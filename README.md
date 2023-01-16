@@ -1,4 +1,7 @@
-[![npm](https://img.shields.io/npm/v/github-version-checker?logo=npm)](https://www.npmjs.com/package/github-version-checker)
+[![npm legacy](https://img.shields.io/npm/v/github-version-checker?label=legacy&logo=npm)](https://www.npmjs.com/package/github-version-checker)
+[![npm](https://img.shields.io/npm/v/@version-checker/core?logo=npm)](https://www.npmjs.com/package/@version-checker/core)
+![node-current (scoped)](https://img.shields.io/node/v/@version-checker/core?logo=node.js)
+
 [![GitHub Workflow Status (CI)](https://img.shields.io/github/actions/workflow/status/axelrindle/github-version-checker/ci.yml?branch=main&logo=github)](https://github.com/axelrindle/github-version-checker/actions/workflows/ci.yml)
 [![GitHub Workflow Status (Docs)](https://img.shields.io/github/actions/workflow/status/axelrindle/github-version-checker/docs.yml?branch=main&label=Docs&logo=github)](https://github.com/axelrindle/github-version-checker/actions/workflows/docs.yml)
 [![Codacy grade](https://img.shields.io/codacy/grade/f82826738d2b43b1b8ba40dd780d1784?logo=codacy)](https://www.codacy.com/gh/axelrindle/github-version-checker/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=axelrindle/github-version-checker&amp;utm_campaign=Badge_Grade)
@@ -12,7 +15,7 @@
 
 ---
 
-# github-version-checker
+# version-checker
 
 > Simple **version checker** working with **GitHub releases** and the **GitHub API**.
 
