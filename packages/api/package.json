@@ -1,6 +1,6 @@
 {
     "name": "@version-checker/api",
-    "version": "3.0.0-rc.2",
+    "version": "3.0.0",
     "description": "The common API used by all version-checker modules.",
     "exports": {
         ".": "./dist/index.d.ts"
