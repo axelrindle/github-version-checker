@@ -21,7 +21,7 @@
     "homepage": "https://axelrindle.github.io/github-version-checker/",
     "scripts": {
         "clean": "rm -rf .nyc_output coverage dist pkg",
-        "build": "tsc",
+        "build": "tsc && scripts/*.sh",
         "test": "nyc --reporter=lcov --reporter=text-summary ava test/test-*",
         "start": "tsx src/index.ts",
         "package": "rm -rf pkg && pkg . --compress gzip --output pkg/version-checker --targets node18-linux-x64,node18-win-x64,node18-macos-x64,node18-linux-arm64,node18-win-arm64,node18-macos-arm64",

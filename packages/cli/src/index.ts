@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-import { readFileSync } from 'fs'
 import sade from 'sade'
 import action from './action'
 
-const { version } = JSON.parse(readFileSync('./package.json').toString())
+const version = 'v%VERSION%'
 const program = sade('version-checker', true)
 
 program
