@@ -1,6 +1,6 @@
 # 3.0.0
 
-> Not yet released [due to problems with lerna](https://github.com/lerna/lerna/issues/3499)
+> Releases on `2023-01-16`
 
 ## Added
 
