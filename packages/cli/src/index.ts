@@ -7,6 +7,9 @@ const program = sade('version-checker', true)
 
 program
     .version(version)
+    .example('-o axelrindle -r github-version-checker -c 2.3.0')
+    .example('-o axelrindle -r github-version-checker -c 2.3.0 --json')
+    .example('-o axelrindle -r github-version-checker -c 2.3.0 --json --token gho_abcdef1234567890')
     .option('-o, --owner', 'The repository owner. May be a username or organization name.')
     .option('-r, --repository', 'The repository name.')
     .option('-c, --current-version', 'The current application version.')
