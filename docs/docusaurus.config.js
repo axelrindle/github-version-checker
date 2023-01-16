@@ -122,7 +122,7 @@ const config = {
                         'aria-label': 'GitHub',
                     },
                     {
-                        href: 'https://www.npmjs.com/package/github-version-checker',
+                        href: 'https://www.npmjs.com/package/@version-checker/core',
                         position: 'right',
                         className: 'nav-icon-link nav-npm-link',
                         'aria-label': 'npm',
