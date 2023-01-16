@@ -2,12 +2,21 @@ import { CallbackFunction, CheckOptions, CheckResult } from '@version-checker/ap
 import check from './check'
 
 /**
- * The exported checking function.
+ * Performs the update check.
  *
  * @param options The options for the version check.
- * @param callback An optional callback to pass the result to.
- *                 Can be omitted to return a Promise.
+ * @returns {Promise<CheckResult>}
  */
+function versionCheck(options: CheckOptions): Promise<CheckResult>
+
+/**
+ * Performs the update check.
+ *
+ * @param options The options for the version check.
+ * @param callback A callback which receives the error or the result.
+ */
+function versionCheck(options: CheckOptions, callback: CallbackFunction): undefined
+
 function versionCheck(
     options: CheckOptions,
     callback?: CallbackFunction
