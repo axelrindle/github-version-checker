@@ -1,6 +1,6 @@
 {
     "name": "@version-checker/core",
-    "version": "3.0.0-rc.2",
+    "version": "3.0.0-rc.3",
     "description": "Version checker working with GitHub releases.",
     "exports": {
         ".": "./dist/index.js"
