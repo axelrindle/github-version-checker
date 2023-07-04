@@ -14,7 +14,7 @@ const check: CheckFunction = async function(options: CheckOptions): Promise<Chec
         throw new Error('options object must not be null or undefined!')
     }
 
-    if (options.token !== false) {
+    if (options.token !== false && typeof process !== 'undefined') {
         options.token = options.token || process.env['GITHUB_TOKEN'] || undefined
     }
 
