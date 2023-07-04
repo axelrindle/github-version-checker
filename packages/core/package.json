@@ -2,11 +2,16 @@
     "name": "@version-checker/core",
     "version": "3.0.0",
     "description": "Version checker working with GitHub releases.",
+    "main": "./dist/node/cjs/index.js",
+    "module": "./dist/node/esm/index.js",
+    "types": "./dist/types/index.d.ts",
     "exports": {
-        ".": "./dist/index.js"
+        ".": {
+            "require": "./dist/node/cjs/index.js",
+            "import": "./dist/node/esm/index.js",
+            "types": "./dist/types/index.d.ts"
+        }
     },
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
     "keywords": [
         "version-checker",
         "github-api"
@@ -31,13 +36,16 @@
         "@typescript-eslint/eslint-plugin": "^5.38.1",
         "@typescript-eslint/parser": "^5.38.1",
         "ava": "^4.3.3",
+        "concurrently": "^8.2.0",
         "eslint": "^8.24.0",
         "nyc": "^15.1.0",
         "ts-node": "^10.9.1"
     },
     "scripts": {
         "clean": "rm -rf .nyc_output coverage dist",
-        "build": "tsc",
+        "build": "concurrently 'npm:build:*'",
+        "build:node": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
+        "build:types": "tsc -p tsconfig.types.json",
         "lint": "eslint src/",
         "test": "nyc --reporter=lcov --reporter=text-summary ava",
         "prepublishOnly": "npm run build"

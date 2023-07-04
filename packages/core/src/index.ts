@@ -32,5 +32,3 @@ function versionCheck(
 }
 
 export default versionCheck
-//@ts-ignore
-export = versionCheck
