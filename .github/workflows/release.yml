@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  github-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/github-script@v6
+        id: get-version
+        with:
+          result-encoding: string
+          script: |
+            const major = process.env.GITHUB_REF_NAME.substring(1, 2)
+            const fullVersion = process.env.GITHUB_REF_NAME.substring(1)
+
+            core.setOutput('major', major)
+            core.setOutput('full', fullVersion)
+      - uses: actions/github-script@v6
+        id: extract-changelog
+        env:
+          VERSION_MAJOR: '${{ steps.get-version.outputs.major }}'
+          VERSION_FULL: '${{ steps.get-version.outputs.full }}'
+        with:
+          result-encoding: string
+          script: |
+            const file = `docs/changelog/${process.env.VERSION_MAJOR}/${process.env.VERSION_FULL}.md`
+
+            let output = ''
+            const options = {
+              listeners: {
+                stdout: (data: Buffer) => {
+                  output += data.toString('utf8')
+                }
+              }
+            }
+            await exec.exec(`cat ${file} | tail -n +5`)
+
+            core.setOutput('markdown', output.trim())
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body: |
+            ## Changelog
+            ${{ steps.extract-changelog.outputs.markdown }}

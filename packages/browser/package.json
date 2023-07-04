@@ -1,6 +1,6 @@
 {
     "name": "@version-checker/browser",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "A proxy package providing support for the browser.",
     "keywords": [
         "version-checker"
@@ -38,7 +38,7 @@
     },
     "dependencies": {
         "@octokit/core": "^5.0.0-beta.4",
-        "@version-checker/core": "*"
+        "@version-checker/core": "^3.1.0"
     },
     "devDependencies": {
         "concurrently": "^8.2.0",
