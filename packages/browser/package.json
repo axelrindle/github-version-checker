@@ -44,5 +44,8 @@
         "concurrently": "^8.2.0",
         "esbuild": "^0.18.11",
         "rimraf": "^5.0.1"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
