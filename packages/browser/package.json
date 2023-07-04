@@ -1,0 +1,48 @@
+{
+  "name": "@version-checker/browser",
+  "version": "3.0.0",
+  "description": "A proxy package providing support for the browser.",
+  "keywords": [
+    "version-checker"
+  ],
+  "author": "Axel Rindle <mail@axelrindle.de>",
+  "homepage": "https://axelrindle.github.io/github-version-checker/",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelrindle/github-version-checker.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "concurrently 'npm:build:*'",
+    "esbuild-base": "esbuild src/index.ts --bundle --platform=browser",
+    "build:browser:esm": "npm run esbuild-base -- --format=esm --outdir=dist/esm",
+    "build:browser:cjs": "npm run esbuild-base -- --format=cjs --outdir=dist/cjs",
+    "build:types": "tsc -p tsconfig.types.json"
+  },
+  "bugs": {
+    "url": "https://github.com/axelrindle/github-version-checker/issues"
+  },
+  "dependencies": {
+    "@octokit/core": "^5.0.0-beta.4",
+    "@version-checker/core": "*"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.18.11",
+    "rimraf": "^5.0.1"
+  }
+}
