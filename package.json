@@ -8,7 +8,8 @@
         "lerna": "^6.4.1"
     },
     "scripts": {
-        "build": "lerna run build",
-        "test": "lerna run test"
+        "clean": "lerna run clean",
+        "build": "lerna run --no-private build",
+        "test": "lerna run --no-private test"
     }
 }
