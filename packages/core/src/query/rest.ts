@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/core'
 import { CheckFunction, CheckOptions, CheckResult, RestResponseTag } from '@version-checker/api'
 import { compareReleases, compareTags } from '../util/comparator'
 import { release, tag } from '../util/scheme-mapper'
-import semver from 'semver'
+import { compare } from 'semver'
 
 /**
  * Executes an API call on the Github Rest API (v3) that should return the latest version.
@@ -57,7 +57,7 @@ const rest: CheckFunction = async function(options: CheckOptions): Promise<Check
         // sort tags using semver.compare
         // in case the tag names are inconsistent (e.g. 1.0.0 => 2.0.0 => v3.0.0)
         const responseData = (response.data as Array<RestResponseTag>)
-            .sort((a, b) => semver.compare(a.name, b.name))
+            .sort((a, b) => compare(a.name, b.name))
             .reverse()
         result.update = tag(compareTags(options, responseData))
     }
