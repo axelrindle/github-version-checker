@@ -37,6 +37,13 @@ This module may be require'd (CommonJS) or imported (ESM).
 
 I do not plan on making this an ESM only module in the near future.
 
+## Can I use this in the browser?
+
+**Yes**, starting with version **3.1.0**.
+
+[Go to the docs](https://axelrindle.github.io/github-version-checker/docs/next/browser-support/)
+for instructions.
+
 ## Install
 
 ```bash
