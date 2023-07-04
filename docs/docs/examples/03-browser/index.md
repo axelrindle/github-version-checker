@@ -13,8 +13,9 @@ import { useState } from 'react'
 import { useQuery } from 'react-query'
 
 export default function App() {
-    const { data } = useQuery<CheckResult['update'], any, CheckResult['update'], any>({
+    const { data, refetch } = useQuery<CheckResult['update'], any, CheckResult['update'], any>({
         queryKey: ['updater'],
+        enabled: false,
         queryFn: async () => {
             const { update } = await versionCheck({
                 owner: 'axelrindle',
@@ -27,20 +28,38 @@ export default function App() {
     })
 
     return (
-        <p>
-            {data === undefined ?
-                (
-                    <p>
-                        No update found.
-                    </p>
-                ) :
-                (
-                    <p>
-                        <b>{data?.name}</b>
-                    </p>
-                )
-            }
-        </p>
+        <>
+            <button onClick={() => refetch()}>
+                Check
+            </button>
+            <p>
+                {isIdle ? (
+                    <span>Hit <b>Reload</b> to check for updates.</span>
+                ) : isLoading ? (
+                    <span>Loading...</span>
+                ) : isError ? (
+                    <span>Error: {error.message}</span>
+                ) : (
+                    <>
+                        <div>
+                            {data === undefined ?
+                                (
+                                    <p>
+                                        No update found.
+                                    </p>
+                                ) :
+                                (
+                                    <p>
+                                        <b>{data?.name}</b>
+                                    </p>
+                                )
+                            }
+                        </div>
+                        <div>{isFetching ? 'Fetching...' : null}</div>
+                    </>
+                )}
+            </p>
+        </>
     )
 }
 ```

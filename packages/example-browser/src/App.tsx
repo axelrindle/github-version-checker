@@ -19,6 +19,7 @@ function App() {
         refetch
     } = useQuery<CheckResult['update'], any, CheckResult['update'], any>({
         queryKey: ['updater'],
+        enabled: false,
         queryFn: async () => {
             const { update } = await versionCheck({
                 owner: 'axelrindle',
@@ -61,7 +62,7 @@ function App() {
 
             <div className="card">
                 {isIdle ? (
-                    'Not ready...'
+                    <span>Hit <b>Reload</b> to check for updates.</span>
                 ) : isLoading ? (
                     <span>Loading...</span>
                 ) : isError ? (
