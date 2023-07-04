@@ -17,7 +17,7 @@ function App() {
         error,
         isFetching,
         refetch
-      } = useQuery<CheckResult['update'], any, CheckResult['update'], any>({
+    } = useQuery<CheckResult['update'], any, CheckResult['update'], any>({
         queryKey: ['updater'],
         queryFn: async () => {
             const { update } = await versionCheck({
@@ -68,21 +68,21 @@ function App() {
                     <span>Error: {error.message}</span>
                 ) : (
                     <>
-                    <div>
-                        {data === undefined ?
-                            (
-                            <p>
-                                No update found.
-                            </p>
-                            ) :
-                            (
-                            <p>
-                                <b>{data?.name}</b>
-                            </p>
-                            )
-                        }
-                    </div>
-                    <div>{isFetching ? 'Fetching...' : null}</div>
+                        <div>
+                            {data === undefined ?
+                                (
+                                    <p>
+                                        No update found.
+                                    </p>
+                                ) :
+                                (
+                                    <p>
+                                        <b>{data?.name}</b>
+                                    </p>
+                                )
+                            }
+                        </div>
+                        <div>{isFetching ? 'Fetching...' : null}</div>
                     </>
                 )}
 
